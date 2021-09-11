@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\graphicspath{ {./} }
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Homework 1}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+
+\maketitle
+\newpage
+
+\section{1}
+\newpage
+\section{2}
+\newpage
+f
+\newpage
+
+\section{3}
+\newpage
+\section{Ross 4.7}
+
+\subsection{a}
+
+Since the infimum is a member of the set of lowerbounds for any set, and the
+supremum is a member of the set of upperbounds, we have $\inf S \leq  s(\forall s \in S)$,
+and $\sup S \geq s(\forall s \in S)$. Therefore by the ordered field axiom, $\inf S \leq \sup S$
+for any set.
+\newline
+Thus we have proven $\inf T \leq \sup T$ and $\inf S \leq \sup S$. Now we show that
+$\inf T \leq \inf S$.
+\newline
+Suppose that the above statement is false, so $\inf S > \inf T $. Then consider k =
+$(\inf S + \inf T) /2$. Since $\inf S > \inf T , k < \inf S$. From the definition of
+infimum, $k < s(\forall s \in S)$. Furthermore, since $k > \inf T $, $\exists t \in T$ such that
+$t > k$. However, $S \subseteq T$ , so every element of S is in T. It is impossible for an
+element to exist in T but not in S. Therefore our assumption is incorrect.
+\newline
+We conclude that $\inf T \leq \inf S$.
+We can repeat the same argument symmetrically for the supremum and show
+that $\sup T \geq \sup S$. Then by the ordered field axioms we can arrive at the
+conclusion $\inf T \leq \inf S \leq \sup S \leq \sup T$ .
+Q.E.D.
+
+
+\subsection{b}
+Let $x = \sup S, y = \sup T, Z = S \cup T $. Furthermore, let $x \geq y$ (switch $S, T$ if
+$x < y$). To show that $x = \sup Z$, we need to show that $\forall z \in Z, x \geq z$, and
+that x is the minimum of all upperbounds of $Z$.
+\newline
+To show the first part, we assume that the statement is false. $\exists z \in Z s.t. z >
+x$. Since $Z$ is the union of $S$ and $T$ , all the elements inside must be from $S$
+or $T$ . $x = \sup S, y = \sup T ,$ and since $x \geq y$, $x$ is an upperbound for both
+S and T . This is a contradiction to our assumption that $\exists z \in Zs.t.z > x.$
+Therefore our assumption is incorrect and $x$ must be an upperbound for $Z$.
+\vspace{\baselineskip}
+\newline
+For the second part, we also assume that it is false. $\exists a < x, s.t.a \geq z(\forall z \in Z)$.
+Consider $b_0 = \frac{a+x}{2}$
+Firstly we can see that $b_0 > a$ since $a < x$.
+Secondly,
+if $b_0 \in S$, our proof is complete since $b_0 > a$ and $b_0 \in S$, therefore $b_0 \in Z$.
+We have found an element in the superset that is greater than our assumed
+supremum. This is a contradiction.
+\newline
+If $b_0 \notin S$, then it must be smaller than the infimum of $S$ since $S$ is a subset of $\R$. In this case $b_0 < s \forall s \in S$. Once again we have found an element in the superset that is greater than the supremum, a contradiction.
+\newline
+From both contradictions we can see that $\sup (S \cup T) = \max \{\sup S, \sup T\}$
+\newline
+Q.E.D.
+\newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Ross 4.8}
+\subsection{a}
+We pick an arbitrary $s \in S$. According to the specifications of the problem, this $s \leq t \forall t \in T$. Therefore this $s$ is a lower bound of the set $T$, it is bounded below.
+\newline
+We can repeat the same logic symetrically and pick $t \in T$ to show that it is greater than or equal to every element of $S$. So $S$ is bounded above.
+
+\subsection{b}
+We will prove this via contradiction. Assume that the statement is false, $\sup S > \inf T$. By the definition of the supremum, $\exists s \in S s.t. s > \inf T$. If T has no supremum or if the supremum is greater than or equal to $s$, $\exists t \in T s.t. t < s$. Otherwise, $s \geq t \forall t \in T$. Either way, we have found an element in each set that contradicts the prerequisites of this problem.
+\newline
+Our assumption is false and $\sup S \leq \inf T$.
+
+\subsection{c}
+Let $S = T = \{ 0 \}$. Since they are the same set, it satisfies that $s \leq t \forall s \in S$ and $t \in T$. $S \cap T = \{0\}$, a non-empty set.
+
+\subsection{d}
+Let $S = {s \in \R | 0 \leq s < 5}, T = {t \in \R | 5 < t < 10}$. This satisfies that $s \leq t \forall s \in S and t \in T$ and $\sup S = \inf T$. However, since the ends at 5 for the two sets are open, they have no overlap. $S \cap T = \{\}$
+
+
+\newpage
+
+\section{Ross 4.11}
+For this problem we simply need to replace the 1 in the denseness proof with an arbitrary n.
+\newline
+Let $a,b \in \R, a < b, c \in \N$. By the Archimedean property there exists $n \in \N$ such that $n(b-a)>c$. Therefore $bn - an > c$. Furthermore, by the same property there is an integer $k$ such that $k > \max{|an|, |bn|}$. Therefore $-k < an < bn < k$.
+\newline
+Then consider the set $J ={j \in \Z, -k \leq j \leq k}, K = {k \in K, k > an}$. This set is a subset of integers, bounded above and below, and non empty (contains at least k). Let $m_1 = \min K$. Then $-k < an < m_1$. Since $m_1 > -k$, $m_1$ is in J. $an > m_1-1$ by our choice of $m_1$.  $m_1-1 \leq an$, $m_1 \leq an+1 \leq bn$. Therefore $an < m_1 < bn$. We can simply let $m_2 = m_1 + 1$. Since $bn - an > c$, we can keep adding 1 to $m_1$ until $c-1$. Furthermore, we can pick $c$ to be arbitrarily large, so we can add 1 arbitrarily many times. Therefore it is infinite.
+\newline
+Q.E.D.
+
+\newpage
+\section{Q7}
+
+\subsection{a}
+We assume that this is false, so $r^2 < 2$ or $r^2 > 2$. For the former we can let $x^2 = \frac{2+r^2}{2}$. This $x^2$ is greater than $r^2$ and less than $2$, so $x$ must be greater than $r$ by problem 3. By the denseness of rationals, there must be a rational between $x$ and $\sqrt 2$. This rational is in the set and greater than the supremum. It is a contradiction, so $r^2 \geq 2$.
+\newline
+If $r^2>2$, we can simply change our argument above symetrically. Let $y^2 = \frac{2+r^2}{2}$. This $y^2$ is greater than 2 but less than $r^2$. By problem 3 $y$ must be smaller than $r$. Since $y^2$ is greater than 2, it is greater than every element in $S$. We have found a smaller upperbound than the supremum. This is a contradiction, therefore $r^2 = 2$.
+
+\subsection{b}
+In this set, consider $a = 3$. $a > s \forall s \in S$. Since s is bounded above, it must have an supremum by the Completeness Axiom. As we have proven above, $r^2 = 2$ must exist.
+
+\subsection{c}
+To prove this, we need to demonstrate that $r^2 = 2, r \notin \Q$.
+\newline
+Assume that $r \in \Q$ and that $r = \frac{p}{q}| p,q \in \N, \gcd(p,q)$. Since $r^2 = 2$, $2 = \frac{p^2}{q^2}$
+$$p^2 = 2 q^2$$
+From this we can see that $p^2$ is even since it is equal to 2 times $q^2$. For $p^2$ to be even, $p$ must also be even. So we can write $p = 2k( k \in \Z)$, $r = \frac{2k}{q}$
+$$r^2 = 2 = \frac{4k^2}{q^2}$$
+$$2q^2 = 4k^2$$
+$$q^2 = 2k^2$$
+Here we see that $q^2$ is also even, so $q$ must be even. However, we have assumed that $\gcd(p,q)=1$. This is a contradiction, so $r \notin \Q$.
+\newline
+Therefore the Completeness Axiom does not hold for $\Q$.
+
+\end{document}
