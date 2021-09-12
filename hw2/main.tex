@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Homework 2}
+\maketitle
+\newpage
+
+\section{Ross 4.15}
+For this we first prove that $\frac{1}{n}>0 \forall n \in \N$. First we multiply both sides by $n$, since $n \in \N, n > 0$, the sign does not change.
+\newline
+We get $LHS = 1$ $RHS = 0$, since $1 > 0$ is an axiom, therefore we know that $1/n > 0$.
+\newline
+Now since we have proven $\frac{1}{n} \geq 0 \forall n \in \N$, by the ordered field axioms $a \leq b$.
+\newline
+Q.E.D.
+\newpage
+
+
+\section{Ross 4.16}
+Let the set in question be denoted by $S$. We will prove the claim via contradiction. We break its negative down into two cases: $\sup S < a$ or $\sup S > a$.
+\newline
+For the former, let $x = \sup S | x \in \R$. By the denseness of rationals we see that there exists $q \in \Q s.t. x \leq q \leq a$. By the definition of this set we have $q \in S$. Therefore we have just found a member of this set that is greater than the supremum. This is a contradiciton so $x$ cannot be less than a.
+\newline
+For the latter, we once again let $x = \sup S | x \in \R$. Consider $a$. $a<x$ and by definition of $S$, $\forall s \in S, s<a$. We have found an upperbound that is less than our supremum. That is a contradiction so $x$ cannot be greater than a.
+\newline
+$\sup S = a$ Q.E.D.
+\newpage
+
+\section{Ross 8.2}
+\subsection{c}
+
+
+
+
+
+\end {document}
