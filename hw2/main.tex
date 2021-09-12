@@ -34,7 +34,7 @@ Q.E.D.
 \section{Ross 4.16}
 Let the set in question be denoted by $S$. We will prove the claim via contradiction. We break its negative down into two cases: $\sup S < a$ or $\sup S > a$.
 \newline
-For the former, let $x = \sup S | x \in \R$. By the denseness of rationals we see that there exists $q \in \Q s.t. x \leq q \leq a$. By the definition of this set we have $q \in S$. Therefore we have just found a member of this set that is greater than the supremum. This is a contradiciton so $x$ cannot be less than a.
+For the former, let $x = \sup S | x \in \R$. By the denseness of rationals we see that there exists $q \in \Q s.t. x \leq q \leq a$. By the definition of this set we have $q \in S$. Therefore we have just found a member of this set that is greater than the supremum. This is a contradiction so $x$ cannot be less than a.
 \newline
 For the latter, we once again let $x = \sup S | x \in \R$. Consider $a$. $a<x$ and by definition of $S$, $\forall s \in S, s<a$. We have found an upperbound that is less than our supremum. That is a contradiction so $x$ cannot be greater than a.
 \newline
@@ -83,16 +83,60 @@ Claim: $lim s_n = 0$.
 Proof:
 Since the absolute value s strictly non-negative, $t_n \geq 0$. Let $\epsilon>0$, since $\lim t_n = 0$, $\exists N s.t. \forall k> N, t_k < \epsilon$. Then consider the seqence $d_n = 0$. Obviously $lim d_n = 0$.
 \newline
-$$0 = |d_k-0| \leq |s_n| = |s_n - 0| \leq t_n = |t_n - 0|$$
+$$0 = |d_k-0| \leq |s_k| = |s_k - 0| \leq t_k = |t_k - 0|$$
 Therefore $s_n$ converges to 0 by squeeze lemma.
 \newpage
 
 
 \section{Ross 8.7}
+\subsection{a}
+Assume that this sequence $a_n$ converges, let $a_n \to k$. By our assumption $\exists N \in \R s.t. |a_n - k|<\epsilon \forall n > N$.
+Since this is a cosine function it is cyclical, we can see that it goes 1, 0.5, -0.5, -1, -0.5, 0.5, ..., repeating ad infinitum.
+\newline
+Let $\epsilon = 0.1$. Select $t > N, t \bmod 6 \equiv 0$. By the pattern we observed above, we know that $a_t = 0$. Furthermore, we know that $a_{t+1} = 0.5$. By the definition of convergence we have $|a_t-k|<\epsilon$, $|a_{t+1}-k|< \epsilon$, subsituting the values we have calculated we have $|0-k|<0.1, |0.5-k|<0.1, |0-k|+|0.5-k|\leq 0.2$. However by the triangle property we know that $|0-k|+|0.5-k| \leq 0.5$. This is a contradiction, therefore our assuption is not correct.
+\newline
+$a_n$ does not converge. Q.E.D.
 
 
+\subsection{b}
+For this problem we simply need to show that the sequence is not bounded.
+\newline
+Assume that the sequence is bounded, and that there is a supremum $k$. By the Archimedean Principle $\exists n \in N s.t. n>k$. Consider $s_n$ (if $n$ is odd consider $s_{n+1}$), this term is greater than $k$. Therefore we have found a member in the set that is greater than the supremum. $\rightarrow \leftarrow$
+\newline
+The sequence is not bounded, therefore $s_n$ cannot converge. Q.E.D.
 
 
+\subsection{c}
+The sequence here is very similar to that in section (a). The pattern is 0, 0.5, 1, 0.5, 0, -0.5, -1, -0.5, ... . We can let $\epsilon = 0.1$ again and assume that it converges. So let $N \in \R s.t. |c_n - \lim c_n| < \epsilon \forall n > N$. Pick $i > N s.t. i \bmod 6 \equiv 0$. From the pattern that we observed, $c_{n+1} = 0.5$. By the triangle inequality we see that $\lim c_n$ cannot exist since we need the "two sides" (0.2) to be less than the other side (0.5).
+\newline
+We have found a contradiction, $c_n$ does not converge.
+\newpage
 
 
+\section{Ross 8.10}
+Since $\lim s_n > a$, $\lim s_n - a > 0$. Let this value be $d$.
+\newline
+Consider $\epsilon = d$. Since the sequence converges we have $\exists N \in R s.t. \forall n > N, |s_n - \lim s_n|<\epsilon$. Since $\epsilon = \lim s_n - a$, we have
+$$|s_n - \lim s_n| < \lim s_n - a$$
+\newline
+If $s_n \geq \lim s_n$, $s_n > a$ because $\lim s_n > a$.
+\newline
+Otherwise, $s_n < \lim s_n$. We can simplfy $|s_n - \lim s_n| < \lim s_n - a$ into $ \lim s_n - s_n < \lim s_n - a$, and by algebraic manipulation we have $s_n > a$.
+\newline
+In both cases $s_n > a$. Q.E.D.
+\newpage
+
+
+\section{Q7}
+Claim: $\lim s_n = 1$
+\newline
+Let $\epsilon > 0$. Consider $a_n = 1$, $b_n = 1-\frac{1}{n}$. Obviously $a_n$ converges to 1.
+\newline
+For $b_n$, let $N = \frac{1}{\epsilon}$. $\forall k > N$, we have $|b_k - 1| = |1-\frac{1}{k}-1| = |-\frac{1}{k}| = \frac{1}{k} < \epsilon$. Therefore $b_n \to 1$
+\newline
+Since $\frac{1}{n} > 0 \forall n \in \N$, $(1-\frac{1}{n})<1$, so $\sqrt{(1-\frac{1}{n})} > (1-\frac{1}{n})$.
+\newline
+We have shown that $a_n \to 1$, $b_n \to 1$, and $b_n \leq s_n \leq a_n$. Therefore $s_n \to 1$ by squeeze theorem.
+\newline
+Q.E.D.
 \end {document}

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1631474685 "main.tex" "main.pdf" "main" 1631474686
+["pdflatex"] 1631491136 "main.tex" "main.pdf" "main" 1631491137
   "C:/Users/Ethan/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1630654524 10391628 6e8eddc61a48ac3ce7a64b02d2ac5b1c ""
   "C:/Users/Ethan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1630950183 335493 e59bd1a6c1c38f69c60a89e13211d84d ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233955448 1004 54797486969f23fa377b128694d548df ""
@@ -21,6 +21,7 @@
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247596667 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247596666 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -71,9 +72,9 @@
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/grfext/grfext.sty" 1575403074 7133 b94bbacbee6e4fdccdc7f810b2aec370 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/kvoptions/kvoptions.sty" 1602228096 22521 d2fceb764a442a2001d257ef11db7618 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3backend/l3backend-pdftex.def" 1628077986 27662 df2ac0cbce6c3f309d48d78e7c627ccb ""
-  "main.aux" 1631474686 874 e1a122b123d85d8368d5e5116debada9 "pdflatex"
-  "main.tex" 1631474616 2808 0ec1d514737157df6f944280a8702cef ""
+  "main.aux" 1631491137 1533 6391420028d6acb30b8eb762a259aff6 "pdflatex"
+  "main.tex" 1631491118 6792 c99f36128a2653d93ce3749793abb1cd ""
   (generated)
+  "main.log"
   "main.aux"
   "main.pdf"
-  "main.log"
