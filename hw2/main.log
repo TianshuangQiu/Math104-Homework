@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.3)  12 SEP 2021 12:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.9.3)  12 SEP 2021 12:24
 entering extended mode
 **./main.tex
 (main.tex
@@ -302,22 +302,33 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 (C:\Users\Ethan\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-main.tex:21: I can't write on file `main.pdf'.
-Please type another file name for output
-main.tex:21: Emergency stop.
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.21 \newpage
-             
-*** (job aborted, file error in nonstop mode)
+[1
 
- 
+{C:/Users/Ethan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+[3] [4] [5] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 4752 strings out of 478893
- 72593 string characters out of 2849010
- 390061 words of memory out of 3000000
- 22571 multiletter control sequences out of 15000+600000
- 406626 words of font info for 40 fonts, out of 8000000 for 9000
+ 4784 strings out of 478893
+ 72973 string characters out of 2849010
+ 396052 words of memory out of 3000000
+ 22591 multiletter control sequences out of 15000+600000
+ 411886 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,6n,70p,371b,211s stack positions out of 5000i,500n,10000p,200000b,80000s
-main.tex:21:  ==> Fatal error occurred, no output PDF file produced!
+<C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Ethan/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ethan/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Ethan/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/U
+sers/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+17.pfb><C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr6.pfb><C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmr8.pfb><C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ethan/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Ethan/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (5 pages, 113103 bytes).
+PDF statistics:
+ 68 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

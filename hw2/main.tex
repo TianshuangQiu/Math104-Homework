@@ -63,12 +63,33 @@ Claim: $s_n \to 0$
 \newline
 Proof: $|s_n - 0| = |\frac{1}{n}sin n| \leq \frac{1}{n}$.
 \newline
-Let  $\epsilon > 0$, we select our $N = \frac{1}{epsilon}$. For all $n>N, |s_n-0| \leq \frac{1}{n} < \epsilon$
+Let  $\epsilon > 0$, we select our $N = \frac{1}{\epsilon}$. For all $n>N, |s_n-0| \leq \frac{1}{n} < \epsilon$
 \newpage
 
 
 \section{Ross 8.5}
 \subsection{a}
+Let $\epsilon > 0$, since $a_n, b_n \to s$, $|a_n-s|<\epsilon \forall n > N_1$ and $|b_n-s|<\epsilon \forall n > N_2$.
+\newline
+Let $k> \max \{ N_1, N_2\}$, $a_k \leq s_k \leq b_k$. We subtract s from the expression and we have: $a_k-s \leq s_k -s \leq b_k-s$. Furthermore $|a_k-s|<\epsilon, |b_k - s| < \epsilon$.
+\newline
+Since $s_k-s$ is "sandwiched" between two expressions whose absolute values are less than epsilon, then $|s_k-s|<\epsilon$.
+\newline
+$s_n \to 0$, Q.E.D.
+
+\subsection{b}
+Claim: $lim s_n = 0$.
+\newline
+Proof:
+Since the absolute value s strictly non-negative, $t_n \geq 0$. Let $\epsilon>0$, since $\lim t_n = 0$, $\exists N s.t. \forall k> N, t_k < \epsilon$. Then consider the seqence $d_n = 0$. Obviously $lim d_n = 0$.
+\newline
+$$0 = |d_k-0| \leq |s_n| = |s_n - 0| \leq t_n = |t_n - 0|$$
+Therefore $s_n$ converges to 0 by squeeze lemma.
+\newpage
+
+
+\section{Ross 8.7}
+
 
 
 
