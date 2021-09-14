@@ -81,7 +81,7 @@ $s_n \to 0$, Q.E.D.
 Claim: $lim s_n = 0$.
 \newline
 Proof:
-Since the absolute value s strictly non-negative, $t_n \geq 0$. Let $\epsilon>0$, since $\lim t_n = 0$, $\exists N s.t. \forall k> N, t_k < \epsilon$. Then consider the seqence $d_n = 0$. Obviously $lim d_n = 0$.
+Since the absolute value s strictly non-negative, $t_n \geq 0$. Let $\epsilon>0$, since $\lim t_n = 0$, $\exists N s.t. \forall k> N, t_k < \epsilon$. Then consider the seqence $d_n = 0$. Obviously $\lim d_n = 0$.
 \newline
 $$0 = |d_k-0| \leq |s_k| = |s_k - 0| \leq t_k = |t_k - 0|$$
 Therefore $s_n$ converges to 0 by squeeze lemma.
@@ -118,7 +118,6 @@ Since $\lim s_n > a$, $\lim s_n - a > 0$. Let this value be $d$.
 \newline
 Consider $\epsilon = d$. Since the sequence converges we have $\exists N \in R s.t. \forall n > N, |s_n - \lim s_n|<\epsilon$. Since $\epsilon = \lim s_n - a$, we have
 $$|s_n - \lim s_n| < \lim s_n - a$$
-\newline
 If $s_n \geq \lim s_n$, $s_n > a$ because $\lim s_n > a$.
 \newline
 Otherwise, $s_n < \lim s_n$. We can simplfy $|s_n - \lim s_n| < \lim s_n - a$ into $ \lim s_n - s_n < \lim s_n - a$, and by algebraic manipulation we have $s_n > a$.
