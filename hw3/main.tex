@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Homework 3}
+\maketitle
+\newpage
+
+\section{Ross 8.2}
+
+\subsection{a}
+Since $n^2+1 > n \forall n \in \n \R$, the fraction  $\frac{n}{n^2+1} < 1$. Furthermore since $n \geq 0$ and $n^2 > 0$ the fraction is positive. So we have $\0<\frac{n}{n^2+1} < 1$. It is bounded
+\newline
+Now we need to show that it is monotonically decreasing, and we will do this via induction.
+\newline
+Base case: $a_1 = \frac{1}{2}, a_2 = \frac{2}{5}, a_2 < a_1$
+\newline
+Inductive case: assume that $a_n < a_{n-1}$, consider $$a_{n+1} = \frac{n+1}{(n+1)^2+1}$$
+We take $a_{n+1} - a_n$
+$$ = \frac{n+1}{(n+1)^2+1} - \frac{n}{n^2+1}$$
+$$ = \frac{(n+1)(n^2+1)-n((n+1)^2+1)}{(n^2+1)((n+1)^2+1)}$$
+$$ = \frac{n^3+n+n^2+n-n(n+1)^2-n}{(n^2+1)((n+1)^2+1)}$$
+$$ = \frac{n^3+n+n^2+n-n^3-n-2n^2-n}{(n^2+1)((n+1)^2+1)}$$
+$$ = \frac{-n^2}{(n^2+1)((n+1)^2+1)}$$
+For $n \geq 1$, $-n^2 < 0, (n^2+1)((n+1)^2+1) > 0$, so the fraction is negative. $a_n > a_{n+1}$. We have proven the inductive case.
+\newline
+We have proven that the sequence is bounded and monotonically decreasing, therefore it converges. Q.E.D.
+
+
+\subsection{c}
+
+
+\end{document}
