@@ -79,6 +79,61 @@ Consider $x_n = \sup S - 1/n$. Since $x_n < \sup S, \exists s_n \in S s.t. x_n \
 
 
 \section{Q4}
+Since $s_n \to s$ by our assumption, let $\epsilon > 0, \exists N s.t. \forall n>N, |s_n - s| < \epsilon$.
+\newline
+Therefore $s-\epsilon < s_n < s + \epsilon$. Since $s_n$ is between these two end points, and since the $\lim \inf$ is non-decreasing, we have $\lim \inf s_n \geq s-\epsilon$.
+\newline
+Since $\epsilon$ can be arbitrarily small, we must have $\lim \inf s_n \geq s$. Q.E.D.
+\newpage
+
+
+\section{Q5}
+\subsection{a}
+We will attempt to prove this via induction.
+\newline
+Base case: $n = 1, s_n = 2, 2^2-2 >0$
+\newline
+Inductive case: assume that $s_n^2>2$, then $$s_{n+1}^2-2 = \frac{s_n^2}{4} + \frac{1}{s_n^2} + 2$$. Since $s_n^2 > 2, \frac{s_n^2}{4}>0, \frac{1}{s_n^2}>0$. So $s_{n+1}^2 > 2$.
+\newline
+$s_n^2 -2> 0 \forall n \in \N$
+
+\subsection{b}
+We first prove that $s_n > 0 \forall n \in \N$. $n = 1, s_n = 2, 2>0$.
+\newline
+In the inductive case, assume $s_n > 0$, so $s_n/2 > 0, 1/s_n>0$, therefore $s_n{n+1}>0$. We have proven the inductive case.
+\newline
+To prove that it is monotone will again use induction.
+\newline
+Base case: $n = 1, s_n = 2, s_{n+1} = 2/2 + 1/2 = 3/2$, $s_{n+1}<s_n$. The base case holds.
+\newline
+Inductive case: assume that $s_n < s_{n-1}$. Consider $s_n-s_{n+1} = s_n - \frac{s_n}{2} - \frac{1}{s_n}$
+$$\frac{s_n}{2} - \frac{1}{s_n} = \frac{s_n^2-2}{2s_n}$$
+We have shown that $s_n^2 -2> 0 $ and that $s_n>0$, so this fraction is positive, therefore $s_n > s_{n+1}$. This sequence is monotnically decreasing.
+\newline
+Furthermore, since $0<s_n<2$, the sequence is bounded above and below. Therefore it converges. Q.E.D.
+\newpage
+
+
+\section{Q6}
+\subsection{a}
+$\lim s_n = \sqrt2$.
+\newline
+We have shown that the sequence converges, so it is also cauchy. Let $\epsilon > 0$, there exists $N$ such that for $ i> N, |s_i - s_{i+1}| < \epsilon$.
+\newline
+Since $\epsilon$ can get arbitrarily small and that it converges, we should have $\lim_{n \to \infty} s_n= \lim s_{n+1}$. Therefore $\lim s_n$ should satisfy $$\lim s_n = \frac{\lim s_n}{2}+ \frac{1}{\lim s_n}$$
+$$(\lim s_n)^2 = \frac{\lim s_n^2}{2} + 1$$
+$$\frac{1}{2}(\lim s_n)^2 = 1$$
+$$(\lim s_n)^2 = 2$$
+$$\lim s_n= \sqrt2$$
+
+\subsection{b}
+The sequence $s_n$ has $s_n \in \Q$ because each term is the sum of two rationals. Since it is convergent, the sequence is cauchy, but $s_n \to \sqrt 2$, which is an irrational.
+\newpage
+
+
+\section{Q7}
+\subsection{a}
+
 
 
 
