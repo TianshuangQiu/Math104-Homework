@@ -74,7 +74,7 @@ Therefore the sequence is cauchy. Q.E.D.
 \section{Ross 10.7}
 We essentially want to slowly pick items in $S$ that is closer to $\sup S$.
 \newline
-Consider $x_n = \sup S - 1/n$. Since $x_n < \sup S, \exists s_n \in S s.t. x_n \leq s_n \leq \sup S$. Both $x_n$ and $\sup S$ converge to $\sup S$, therefore $s_n \to \sup S$ by squeeze theorem.
+Consider $x_n = \sup S - 1/n$. Since $x_n < \sup S, \exists s_n \in S s.t. x_n \leq s_n < \sup S$. Both $x_n$ and $\sup S$ converge to $\sup S$, therefore $s_n \to \sup S$ by squeeze theorem.
 \newpage
 
 
@@ -108,7 +108,7 @@ Base case: $n = 1, s_n = 2, s_{n+1} = 2/2 + 1/2 = 3/2$, $s_{n+1}<s_n$. The base 
 \newline
 Inductive case: assume that $s_n < s_{n-1}$. Consider $s_n-s_{n+1} = s_n - \frac{s_n}{2} - \frac{1}{s_n}$
 $$\frac{s_n}{2} - \frac{1}{s_n} = \frac{s_n^2-2}{2s_n}$$
-We have shown that $s_n^2 -2> 0 $ and that $s_n>0$, so this fraction is positive, therefore $s_n > s_{n+1}$. This sequence is monotnically decreasing.
+We have shown that $s_n^2 -2> 0 $ and that $s_n>0$, so this fraction is positive, therefore $s_n > s_{n+1}$. This sequence is monotonically decreasing.
 \newline
 Furthermore, since $0<s_n<2$, the sequence is bounded above and below. Therefore it converges. Q.E.D.
 \newpage
@@ -120,7 +120,7 @@ $\lim s_n = \sqrt2$.
 \newline
 We have shown that the sequence converges, so it is also cauchy. Let $\epsilon > 0$, there exists $N$ such that for $ i> N, |s_i - s_{i+1}| < \epsilon$.
 \newline
-Since $\epsilon$ can get arbitrarily small and that it converges, we should have $\lim_{n \to \infty} s_n= \lim s_{n+1}$. Therefore $\lim s_n$ should satisfy $$\lim s_n = \frac{\lim s_n}{2}+ \frac{1}{\lim s_n}$$
+Since $\epsilon$ can get arbitrarily small and that it converges, at very large values of $n$, $s_n$ should be very close the the limit and to $s_{n+1}$. We should have $\lim_{n \to \infty} s_n= \lim_{n \to \infty} s_{n+1}$. Therefore $\lim s_n$ should satisfy $$\lim s_n = \frac{\lim s_n}{2}+ \frac{1}{\lim s_n}$$
 $$(\lim s_n)^2 = \frac{\lim s_n^2}{2} + 1$$
 $$\frac{1}{2}(\lim s_n)^2 = 1$$
 $$(\lim s_n)^2 = 2$$
@@ -133,8 +133,30 @@ The sequence $s_n$ has $s_n \in \Q$ because each term is the sum of two rational
 
 \section{Q7}
 \subsection{a}
+Since the sequence is $-1$ when $n$ is odd and $1$ otherwise, it oscillates ad infinitum. $-1 \leq s_n \leq 1$, so $\lim \inf s_n = -1, \lim \sup s_n = 1$
+\newline
+Let $x_n = \{ s_n | n \bmod 2 \equiv 1\} = \{-1, -1, -1 ...\}$. Since $x_n = -1 \forall n \in \N$, $x_n \to -1 = \lim \inf$
+\newline
+Let $y_n = \{ s_n | n \bmod 2 \equiv 0\} = \{1, 1, 1 ...\}$. Since $y_n = 1 \forall n \in \N$, $x_n \to 1 = \lim \sup$
 
+\subsection{b}
+We claim that $s_n \to 0$.
+\newline
+Let $\epsilon > 0$, choose $N = \log_2(1/\epsilon)$, $\forall n > N, |s_n-0| = |s_n| = \frac{1}{2^n}$
+$$\frac{1}{2^n} < \frac{1}{2^N} = \epsilon$$
+Therefore the sequence converges to 0.
+\newline
+Since we have proven that a sequence converges $iff$ its $\lim \inf = \lim \sup$, we have $\lim \inf s_n= \lim \sup s_n = 0$
+\newline
+Define $x_n = \{ s_n | n \bmod 2 \equiv 1\}$. Since we are only taking odd $n$'s from the set, $x_n < 0$, and since a subsequence of a convergent sequence also converges to its limit, $x_n \to \lim \inf$
+\newline
+By the same logic we define Define $y_n = \{ s_n | n \bmod 2 \equiv 0\}$. We can see that $y_n > 0$, and by the convergence theorem stated above we have $y_n \to \lim \sup s_n= 0$
 
-
+\subsection{c}
+Using the limit theorem we can break this down into $\lim (-1)^n$ and $\lim 1/n$. From the work above and in class proofs we have $\lim \inf s_n = -1 + 0 = -1$ and $\lim \sup s_n = 1 + 0 = 1$
+\newline
+Similar to (a), we define $x_n = \{ s_n | n \bmod 2 \equiv 1\} = (-1)^{2n-1} + 1/(2n-1)$. $\lim x_n = \lim (-1)^{2n-1} + \lim 1/(2n-1)$. The former is constant while the latter is a subsequence of $1/n$ so it converges to 0. Moreover, this sequence only decreasing due to $1/n$ so it is monotone. Finally we have $\lim x_n = \lim \inf s_n = -1$
+\newline
+Then we define $y_n = \{ s_n | n \bmod 2 \equiv 0\} = (-1)^{2n} + 1/(2n) = 1+1/(2n)$. By the same logic as above the first term converges to 1 while the second converges to 0. It is also monotonically decreasing for the same reason. Finally we have $\lim y_n = \lim \sup s_n = 1$
 
 \end{document}
