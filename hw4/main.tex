@@ -27,7 +27,78 @@
 
 \section{Q1}
 \subsection{a}
+Let $x$ be an arbitrary point in $E = (0,1)$. Choose $r = \min \{(1-x)/2, x/2\}$.
+\newline
+Consider $S = \{d(s,x)<r\}$. Since $0<x<1$, $(1-x)/2$ and $x/2$ are both positive. Therefore $r>0$, and since $x-x/2 > 0, x+(1-x)/2<1$, we have $S \subseteq E$
+\newline
+Therefore $E$ is open.
+\newline
+Consider the complement of $E: E' = \R \setminus E$
+\newline
+Let $x'=1, r'>0$. Since $E'$ is the complement of $E$, it is the union of $(-\infty, 0], [1, +\infty)$. If $r \geq 1$, we can see that $S' = \{d(s',x')<r'\}$ contains the point $1/2$ for instance, and $1/2 \notin E'$. Otherwise, let $a = x'-r'$, since $x'=1, 0<r'<1, a \in S, a \notin E$. Therefore its complement is not open.
+\newline
+Thus we have shown that $(0,1)$ is open and not closed.
 
+\subsection{b}
+Let $x=1, r>0, E=[0,1]$. Consider $S = \{d(s,x)<r\}$. Since $r>0, \exists s \in S s.t. s>x$. However since the interval only goes from 0 to 1, $s \notin E$. Therefore this interval is not open.
+\newline
+Consider $E' = \R \setminus E$.
+\newline
+Since $E'$ is the complement of $E$, it is the union of $(-\infty, 0), (1, +\infty)$. If $x$ is in the former, then pick $r' = -x/2$. Since $x<0, -x > 0$, and $x+(-x/2)<0$, so $S = \{d(s',x')<r'\} \subseteq E$.
+\newline
+If it is in the latter, pick $r' = (x-1)/2$. Since $x>1$, and $x-(x-1)/2>1$, so $S = \{d(s',x')<r'\} \subseteq E$. Therefore its complement is open.
+\newline
+Thus we have shown that $[0,1]$ is closed and not open.
+
+\subsection{c}
+Consider $x = 1$, let $r > 0$, we can consider this set to be a non-increasing series from 1 to 0. Let $S = \{d(s,x)<r\}$, now since $r > 0, \exists s' \in S s.t. 1/2<s'<1$, since this series is non-increasing, $s' \notin E$. Therefore the set is not open.
+\newline
+Consider the complement $E'$. Consider $x'$. If $x'>1 or x'<0$, we can choose $r'$ exactly the same as part (b) of this question. We can see that the set with radius $r'$ is a subset of $E'$.
+\newline
+If $0<x'<1$, we need to show that we can pick an $r'$ small enough to have not let the "other" set in.
+\newline
+Since $x' \notin E$, and $0<x'<1$, then it must be "sanwiched" between two elements of $E$. Let the two around $x'$ be $1/(n+1)<x'<1/n$. Now we can apply the denseness of rationals theorem to show that $\exists q_1, q_2 s.t. 1/(n+1)<q_1<x', x'<q_2<1/n$. Now let $r' = \min \{ q_1, q_2 \}$. We can see that all of the elements in this radius are in the set $E'$. Therefore its complement is open.
+\newline
+Thus we have shown that this set is closed and not open.
+
+\subsection{d}
+Let $x \in \Q, r>0$, and $S = \{d(s,x)<r\}$. By the denseness of irrationals we know that $\exists a \notin \Q s.t. x < a < x+r$. Therefore $\Q$ is not open.
+\newline
+We can repeat the same argument but with irrationals. Let $y$ be irrational$, r>0$, and $S = \{d(s,y)<r\}$. By the denseness of ratioanls we know that $\exists b \in \Q s.t. y < b < y+r$. Therefore $\Q$'s complement is not open.
+\newline
+Therefore $\Q$ is neither open nor closed.
+
+\subsection{e}
+Let this set be $E$. Let $e \in E$ be an arbitrary point, and we choose $r = 1-d(e,(0,0))$. So we have our set $S = \{d(e,s)<r\}$.
+By the triangle inequality we have $d(s, (0,0)) < 1 - r +r = 1$, so $s \in E \forall s \in S$. Therefore the set is open.
+\newline
+Let $E$'s complement be called $E'$, and let $x \in E'$ be a point such that $d(x, (0,0)) = 1$. Let $r' > 0$, then consider the set $S' = \{d(x,s')<r'\}$. $\exists t \in S s.t. d(t, (0,0))<1$. Then $t \in E$. Therefore its complement is not open.
+\newline
+Therefore this set is open and not closed.
+\newpage
+
+
+\section{Q2}
+\subsection{a}
+Let $a \in U$ be an arbitrary point. Since $U$ is a union of a collection of open sets, then it must belong to at least one element of this collection. Let that element be $U_0$.
+\newline
+Since $U_0$ is open, $\exists r>0 s.t. S=\{s \in S | d(a,s)<r\} \subseteq U_0$. Therefore we have found an $r$ that works for an arbitrary point in $U$. Thus $U$ is open. Q.E.D.
+
+\subsection{b}
+Consider $V_0 = U_1 \cap U_2$.
+\newline
+From the intersection, we conclude that for all $v \in V_0, v \in U_1, v \in U_2$. Now consider an arbitrary point $w \in V$. Since it is in open sets $U_1, U_2$, $\exists r_1, r_2 s.t. \{d(w,v)<r_1\} \subset U_1, \{d(w,v)<r_2\} \subset U_2$
+\newline
+Now let $r = \min \{r_1, r_2\}$. Since r is the smaller of the two, $A = \{d(w, a)<r \} \subset V_0, \subset V_1$. Therefore $A \subset V_0$. Thus we have shown that $V_0$ is open.
+\newline
+We can then repeat this process finitely many times, taking the minimum of the radius each time. Finally we have that $V$ is open. Q.E.D.
+
+\subsection{c}
+Consider $W = \cap ^\infty _{n=0} (1/n, -1/n)$. Since $1/n \to 0$ and $-1/n \to 0$, $W = \{0\}$. This set has only 1 element and is therefore closed. Q.E.D.
+\newpage
+
+
+\section{Q3}
 
 
 \end{document}
