@@ -99,6 +99,18 @@ Consider $W = \cap ^\infty _{n=0} (1/n, -1/n)$. Since $1/n \to 0$ and $-1/n \to 
 
 
 \section{Q3}
+Let $\epsilon > 0$, since $s_n \to s$, we have $\exists N s.t. \forall n>N, d(s_n,s)<\epsilon$. Now let $r = \epsilon$, we can see that $\exists n s.t. d(s_n, s)<r$.
+\newline
+Consider the complement of $E: F$. Consider the point $s$, since $s \notin E$, we have $s \in F$. Let $r' > 0$, define $Q = d(s,q)<r'$. Since we have shown above that $\exists n s.t. d(s_n, s)<r$ for $r>0$, we know that $Q$ will always overlap with $E$. Therefore we cannot find a radius small enough, and $F$ is not open. Thus $E$ is not closed. Q.E.D.
+
+
+\section{Q4}
+Since $E$ is not closed, its complement $F$ is not open. Let $s$ be a boundary point in $F$: $s \in F s.t. \{p|d(s,p)<r \} \not\subset F \forall r > 0$
+\newline
+Now let $e$ be an arbitrary point in $E$. Consider the sequence $s_n \in \{s \mid a\in E, d(a,s)<\frac{1}{n}\}$. We are attempting to draw "smaller and smaller" circles. Since we have shown above that $\exists p \in E s.t. d(s,p)<r \forall r>0$, so we know that we can always pick an $s_n$ that is closer to $f$. Now, since $1/n \to 0$, we know that $d(s_n, s)\to 0$, and therefore $s_n \to s, s \not in E$. Q.E.D.
+
+
+\section{Q5}
 
 
 \end{document}
