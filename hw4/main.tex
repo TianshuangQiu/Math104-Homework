@@ -102,15 +102,42 @@ Consider $W = \cap ^\infty _{n=0} (1/n, -1/n)$. Since $1/n \to 0$ and $-1/n \to 
 Let $\epsilon > 0$, since $s_n \to s$, we have $\exists N s.t. \forall n>N, d(s_n,s)<\epsilon$. Now let $r = \epsilon$, we can see that $\exists n s.t. d(s_n, s)<r$.
 \newline
 Consider the complement of $E: F$. Consider the point $s$, since $s \notin E$, we have $s \in F$. Let $r' > 0$, define $Q = d(s,q)<r'$. Since we have shown above that $\exists n s.t. d(s_n, s)<r$ for $r>0$, we know that $Q$ will always overlap with $E$. Therefore we cannot find a radius small enough, and $F$ is not open. Thus $E$ is not closed. Q.E.D.
+\newpage
 
 
 \section{Q4}
 Since $E$ is not closed, its complement $F$ is not open. Let $s$ be a boundary point in $F$: $s \in F s.t. \{p|d(s,p)<r \} \not\subset F \forall r > 0$
 \newline
-Now let $e$ be an arbitrary point in $E$. Consider the sequence $s_n \in \{s \mid a\in E, d(a,s)<\frac{1}{n}\}$. We are attempting to draw "smaller and smaller" circles. Since we have shown above that $\exists p \in E s.t. d(s,p)<r \forall r>0$, so we know that we can always pick an $s_n$ that is closer to $f$. Now, since $1/n \to 0$, we know that $d(s_n, s)\to 0$, and therefore $s_n \to s, s \not in E$. Q.E.D.
+Now let $e$ be an arbitrary point in $E$. Consider the sequence $s_n \in \{s \mid a\in E, d(a,s)<\frac{1}{n}\}$. We are attempting to draw "smaller and smaller" circles. Since we have shown above that $\exists p \in E s.t. d(s,p)<r \forall r>0$, so we know that we can always pick an $s_n$ that is closer to $f$. Now, since $1/n \to 0$, we know that $d(s_n, s)\to 0$, and therefore $s_n \to s, s \notin E$. Q.E.D.
+\newpage
 
 
 \section{Q5}
+Assume that there exists a sequence $s_n$ that converges to $s \notin F$.
+\newline
+First, $s$ must be in $E$. Since $F \subseteq E, \forall f \in F, f \in E$. Furthermore, $E$ is sequentially compact, so every subsequence converges to an element in $E$. Therefore $s_n$ cannot converge to an element outside of $F$, so for the sake of contradiction we assume that it converges to $s \in E$.
+\newline
+Let $\epsilon > 0$, then by our assumption there exists $N$ such that $\forall n>N, d(s_n, s)<\epsilon$. Now since $F$ is closed, we know that its complement is open. Let $F' = S \setminus F$. Since $F$ is open, for any point $a \in F, \exists r>0 s.t. \{b \mid d(a,b)<r\} \subseteq F'$.
+\newline
+Now we let the region surrounding our convergent point $s$ have value $r = k$, and we choose $\epsilon = k/2$. Since $r>0, k/2>0$. Now for all $d(p,s)<k$, $p \in F'$. This is a contradiction since if our sequence converges to $s$, it must be able to get arbitrarily close, but we have just created a space where $s_n$ cannot approach $s$. \lightning
+\newline
+Therefore our assumption is incorrect and $s_n \to s$ must have $s \in F$.
+\newpage
 
 
+\section{Q6}
+By the definiton of $\lim \sup$ we have $$\lim _{N \to \infty}\{\sup \{\frac{a_{n+1}}{a_n}\mid n>N\}< C$$
+\newline
+Assume that the statement is not correct, so we have: for all $N \in \N, a_n \geq c^{n-N}a_N$
+\newline
+Let $k \in \N$, between $n \leq k \leq N$, there must be at least 1 value such that $(a_{k+1}/a_k) \geq C$ because otherwise, $a_n < c^{n-N}a_N$, and we have assumed that to be false. Now since we can show that there is at least 1 instance where $(a_{k+1}/a_k) \geq C$ for all possible intervals of $n,N \in N$, the limit suprerior cannot be less than $C$. \lightning
+\newline
+We have found a contradiction, therefore our assumption is not correct and there must exist some $N \in \N$ that satisfies $a_n < c^{n-N}a_N \forall n>N$. Q.E.D.
+\newpage
+
+
+ \section{Q7}
+\subsection{a}
+Since $k^2 \neq 0 \forall k>0$, $a_n \neq 0$. Consider $a_{n+1}/a_n$ :
+$$\frac{(k+1)^2}{3^{k+1}}\times \frac{3^k}{k^2} = \frac{(k+1)^2}{3k^2}$$
 \end{document}
