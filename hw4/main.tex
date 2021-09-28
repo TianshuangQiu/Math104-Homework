@@ -126,21 +126,34 @@ Therefore our assumption is incorrect and $s_n \to s$ must have $s \in F$.
 
 
 \section{Q6}
-By the definiton of $\lim \sup$ we have $$\lim _{N \to \infty}\{\sup \{\frac{a_{n+1}}{a_n}\mid n>N\}< C$$
+By the definition of $\lim \sup$ we have $$\lim _{N \to \infty}\{\sup \{\frac{a_{n+1}}{a_n}\mid n>N\}< C$$
 \newline
 Assume that the statement is not correct, so we have: for all $N \in \N, a_n \geq c^{n-N}a_N$
 \newline
-Let $k \in \N$, between $n \leq k \leq N$, there must be at least 1 value such that $(a_{k+1}/a_k) \geq C$ because otherwise, $a_n < c^{n-N}a_N$, and we have assumed that to be false. Now since we can show that there is at least 1 instance where $(a_{k+1}/a_k) \geq C$ for all possible intervals of $n,N \in N$, the limit suprerior cannot be less than $C$. \lightning
+Let $k \in \N$, between $n \leq k \leq N$, there must be at least 1 value such that $(a_{k+1}/a_k) \geq C$ because otherwise, $a_n < c^{n-N}a_N$, and we have assumed that to be false. Now since we can show that there is at least 1 instance where $(a_{k+1}/a_k) \geq C$ for all possible intervals of $n,N \in N$, the limit superior cannot be less than $C$. \lightning
 \newline
 We have found a contradiction, therefore our assumption is not correct and there must exist some $N \in \N$ that satisfies $a_n < c^{n-N}a_N \forall n>N$. Q.E.D.
 \newpage
 
 
- \section{Q7}
+\section{Q7}
 \subsection{a}
-Lemma: 
+Lemma: $\lim \sup a+b \leq \lim \sup a + \lim \sup b$
 \newline
-Since $k^2 \neq 0 \forall k>0$, $a_n \neq 0$. Consider $a_{n+1}/a_n$ :
+Since $k^2 \neq 0 \forall k>0$, $a_k \neq 0$. Consider $a_{k+1}/a_k$ :
 $$\frac{(k+1)^2}{3^{k+1}}\times \frac{3^k}{k^2} = \frac{(k+1)^2}{3k^2}$$
-$\lim \sup \frac{(k+1)^2}{3k^2} = $
+$(k+1)^2 < 2k^2$ for all $k>3$, we have
+$$\lim \sup \frac{(k+1)^2}{3k^2} < \lim \sup \frac{2k^2}{3k^2} = \frac{2}{3}$$
+Therefore the ratio of the limit superior is less than 1, the sequence converges absolutely. Q.E.D.
+
+\subsection{b}
+$a_k = k^2/3^k$, define $b_k = 3^k/3^k$. Since $k^2<3^k$ for all $k>2$, we have $a_k<b_k \forall k>2$.
+\newline
+Now consider the nth root: taking the nth root does not change the order when both numbers are positive, so we have $\lim \sup a_k^{1/k} < \lim \sup b_k^{1/k} = 1$ since $b_k$ is constant.
+\newline
+Thus we have $\lim \sup a_n < 1$. The sequence converges by root test. Q.E.D.
+
+\subsection{c}
+Consider $c_k = 2^k/3^k$. $2^k \geq k^2 \forall k\geq 2$. Furthermore, our sequence $a_k = k^2/3^k$ is positive. So we have $|a_k|\leq c_k$. $c_k$ converges by geometric series with $r = 2/3<1$. Therefore $a_k$ converges by limit comparison test.
+
 \end{document}
