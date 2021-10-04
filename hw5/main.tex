@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Math 104, HW5}
+\maketitle
+\newpage
+
+\section{Ross 14.1}
+\subsubsection{a}
+For this we will use the limit comparison test. $n^4 < (3/2)^n$ for large $n$, so let us only consider $n>100$. Now we know that $\sum (\frac{1.5}{2})^n$ converges due to geometric series identity.
+\newline
+$\sum \frac{n^4}{2^n} < \sum (\frac{1.5}{2})^n$ for large $n$, and since tha latter converges, the former converges as well. Q.E.D.
+
+\subsection{b}
+For this we will use the limit comparison test. $3^n < n!$ for large $n$, so let us only consider $n>10$. We know that $\sum (\frac{2}{3})^n$ converges due to geometric series identity.
+\newline
+$\sum \frac{2^n}{n!} < \sum (\frac{2}{3})^n$ for large $n$, since a larger denominator means a smaller value. Since tha latter converges, the former converges as well. Q.E.D.
+
+\subsection{c}
+For this we will use the limit comparison test. $n^2 < 2^n$ for $n>2$. We know that $\sum (\frac{2}{3})^n$ converges due to geometric series identity.
+\newline
+$\sum \frac{n^2}{3^n} < \sum (\frac{2}{3})^n$ for large $n$. Since tha latter converges, the former converges as well. Q.E.D.
+
+\subsection{d}
+We apply the ratio test to $\sum \frac{n!}{n^4}$:
+$$\lim \sup |\frac{(n+1)!}{(n+1)^4}\frac{n^4}{n!}| = n+1 > 1$$
+Therefore it does not converge by ratio test.
+
+\subsection{e}
+Since $cos^2n \leq 1, \sum \frac{cos^2n}{n^2} \leq \sum \frac{1}{n^2}$
+\newline
+Now we apply the root test to $\frac{1}{n^2}$:
+$$|\frac{1}{n^2}|^{1/n} \leq 1^{1/n} = 1$$
+Therefore $\sum \frac{1}{n^2}$ converges by root test, and $\sum \frac{cos^2n}{n^2}$ converges by limit comparison.
+
+\subsection{f}
+We compare this to $\sum \frac{1}{n}$ where $n \geq 2$. $\log n < n$, so $1/\log n < 1/ n$. Since we know that $\sum \frac{1}{n}$ is the harmonic series and does not converge, $\sum \frac{1}{\log n}$ also does not converge by limit comparison.
+\newpage
+
+
+\section{Ross 14.12}
+Since $\lim \inf |a_n|=0$, for all $\epsilon > 0$, there exists $|a_n|\leq \epsilon$.
+\newline
+Pick our subsequence $b_1$ to be $a_1$, and $b_2$ to be $a_n s.t. |a_n|<\frac{|b-1|}{2}$. We can continue like this, defining $b_n$ recursively:
+$$b_n = a_k s.t. |a_k|<|b_{n-1}|/2$$
+We know that we can always find such an $a_k$ because the limit inferior is 0, so $a_n$ must be able to get arbitrarily close to 0.
+\newline
+Since we have picked each element in our series to be less than or equal to half of the former, it is less than or equal to the geometric sum $a_1(\frac{1}{2})^n$. The geometric series converges, and so does our series by limit comparison test.
+Q.E.D.
+
+\end{document}
