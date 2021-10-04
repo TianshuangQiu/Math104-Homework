@@ -63,11 +63,45 @@ We compare this to $\sum \frac{1}{n}$ where $n \geq 2$. $\log n < n$, so $1/\log
 \section{Ross 14.12}
 Since $\lim \inf |a_n|=0$, for all $\epsilon > 0$, there exists $|a_n|\leq \epsilon$.
 \newline
-Pick our subsequence $b_1$ to be $a_1$, and $b_2$ to be $a_n s.t. |a_n|<\frac{|b-1|}{2}$. We can continue like this, defining $b_n$ recursively:
+Pick our subsequence $b_1$ to be $a_1$, and $b_2$ to be $a_n s.t. |a_n|\leq\frac{|b-1|}{2}$. We can continue like this, defining $b_n$ recursively:
 $$b_n = a_k s.t. |a_k|<|b_{n-1}|/2$$
 We know that we can always find such an $a_k$ because the limit inferior is 0, so $a_n$ must be able to get arbitrarily close to 0.
 \newline
 Since we have picked each element in our series to be less than or equal to half of the former, it is less than or equal to the geometric sum $a_1(\frac{1}{2})^n$. The geometric series converges, and so does our series by limit comparison test.
 Q.E.D.
 
+
+\subsection{Ross 14.14}
+Let the harmonic series be named $h_n$ and the provided series be $a_n$.
+\newline
+From what was given, we can provide a formula for $a_n$: $$a_n = \frac{1}{2^{\floor*{\frac{n}{2}}}}$$
+\newline
+Since $2^{\floor*{\frac{n}{2}}}$ will always be at least 1 greater than $n$, we have $h_n > a_n$
+\newline
+Now we attempt to show that $a_n$ does not converge. We can the similar terms together, it is simple to see that it sums to $\frac{1}{2}$. We can further prove this using our formula for $a_n$: for any $a_n = \frac{1}{2^k}$, there are $2^{k-1}$ terms of such $a_n$, which sums to
+$$2^{k-1}\frac{1}{2^k} = \frac{1}{2}$$
+We see that sum any $a_n$ with like terms to get $\frac{1}{2}$, so we state that $\sum_{n=2}^\infty a_n = \sum_{n=2}^\infty \frac{1}{2}$
+\newline
+This series does not converge because the limit is not 0. Therefore $\frac{1}{n}$ also does not converge by limit comparison test.
+\newpage
+
+
+\section{Ross 15.3}
+If $p\leq0$, we can simply apply the limit comparison test to see that it is greater than or equal to the harmonic series, which does not converge, implying that the series also does not converge.
+\newline
+Now for $p \geq 1$, we apply the integral test.
+$$\int_{2}^{\infty}\frac{1}{n(\log n)^p}) \,dn = \lim _{n \to \infty} \int_{2}^{n}\frac{1}{n(\log n)^p} \,dn$$
+(Assuming that log means the natural log) Let $u = \ln n, du = \frac{1}{n}$
+$$= \lim _{n \to \infty} \int_{\ln 2}^{\ln n} \frac{1}{u^p} \,du$$
+This integral can be evaluated to a finite value for $p>1$ because we can use the power rule. When $p = 1$, the integral evaluates to $\ln u$, which is not finite when $u \to \infty$.
+\newline
+Q.E.D.
+\newpage
+
+
+\section{Q5}
+\subsection{a}
+Let $\epsilon > 0, x_0 \in \R$. We pick $\delta = \max$
+
+Consider $f(x_0+\delta) = x_0^2+\delta^2+2\delta x_0$, however, since $\delta = $
 \end{document}
