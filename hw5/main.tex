@@ -69,9 +69,9 @@ We know that we can always find such an $a_k$ because the limit inferior is 0, s
 \newline
 Since we have picked each element in our series to be less than or equal to half of the former, it is less than or equal to the geometric sum $a_1(\frac{1}{2})^n$. The geometric series converges, and so does our series by limit comparison test.
 Q.E.D.
+\newpage
 
-
-\subsection{Ross 14.14}
+\section{Ross 14.14}
 Let the harmonic series be named $h_n$ and the provided series be $a_n$.
 \newline
 From what was given, we can provide a formula for $a_n$: $$a_n = \frac{1}{2^{\floor*{\frac{n}{2}}}}$$
@@ -101,7 +101,35 @@ Q.E.D.
 
 \section{Q5}
 \subsection{a}
-Let $\epsilon > 0, x_0 \in \R$. We pick $\delta = \max$
+Let $\epsilon > 0, x_0 \in \R$. We pick $\delta = \min \{1, \frac{\epsilon}{1+2|x_0|}\}$
+\newline
+Let $|x-x_0|<\delta$, Consider $|f(x)-f(x_0)| = |x^2-x_0^2| = |x+x_0||x-x_0|$. By our definition of $\delta$, the expression is strictly less than $|x+x_0|\delta$
+\newline
+Now we examine our definition of $\delta$. Since it cannot be greater than 1, we have $|x-x_0|<1$. By algebraic manipulation we can state that $|x+x_0|=|x-x_0+2x_0|$, and apply the triangle inequality: $|x+x_0|\leq |x-x_0|+|2x_0|$
+\newline
+We can now subsitute $1$ to get $|x+x_0|\leq 1+|2x_0|$
+\newline
+Now we connect it all together:
+$$|f(x)-f(x_0)| = |x^2-x_0^2| < (1+|2x_0|)\delta = \epsilon$$
+Thus we have proven that it is continuous.
+\newline
+Q.E.D.
 
-Consider $f(x_0+\delta) = x_0^2+\delta^2+2\delta x_0$, however, since $\delta = $
+\subsection{b}
+Let $\epsilon > 0, x_0 \in \R$. We pick $\delta = \min \{1, \frac{\epsilon}{(1+|x_0|)^2+|x_0+|x_0|^2|+|x_0^2|} \}$
+\newline
+Let $|x-x_0|<\delta$, Consider $|f(x)-f(x_0)| = |x^3-x_0^3| = |x-x_0||x^2+xx_0+x_0^2|$. By our definition of $\delta$, the expression is strictly less than $|x^2+xx_0+x_0^2|\delta \leq (|x|^2+|xx_0|+|x_0^2|)\delta$
+\newline
+Now we examine our definition of $\delta$. Since it cannot be greater than 1, we have $|x-x_0|<1$. By the triangle inequality we can state that $|x|< 1+|x_0|$.
+\newline
+We can now subsitute $|x|$:
+$$|f(x)-f(x_0)| \leq (|x|^2+|xx_0|+|x_0^2|)\delta <((1+|x_0|)^2+|x_0+|x_0|^2|+|x_0^2|)\delta = \epsilon$$
+Thus we have proven that it is continuous.
+\newline
+Q.E.D.
+\newpage
+
+
+\section{Q6}
+
 \end{document}
