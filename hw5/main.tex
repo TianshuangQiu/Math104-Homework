@@ -107,7 +107,7 @@ Let $|x-x_0|<\delta$, Consider $|f(x)-f(x_0)| = |x^2-x_0^2| = |x+x_0||x-x_0|$. B
 \newline
 Now we examine our definition of $\delta$. Since it cannot be greater than 1, we have $|x-x_0|<1$. By algebraic manipulation we can state that $|x+x_0|=|x-x_0+2x_0|$, and apply the triangle inequality: $|x+x_0|\leq |x-x_0|+|2x_0|$
 \newline
-We can now subsitute $1$ to get $|x+x_0|\leq 1+|2x_0|$
+We can now subsitute in $1$ to get $|x+x_0|\leq 1+|2x_0|$
 \newline
 Now we connect it all together:
 $$|f(x)-f(x_0)| = |x^2-x_0^2| < (1+|2x_0|)\delta = \epsilon$$
@@ -131,5 +131,52 @@ Q.E.D.
 
 
 \section{Q6}
+\subsection{If x = 0}
+Let $\epsilon > 0, x_0 = 0$. We pick $\delta = \epsilon^2$
+\newline
+Let $|x-x_0|<\delta$, we have $|f(x)-f(x_0)| = |\sqrt x - 0| = \sqrt x$ since $\sqrt 0 = 0$, and the result of a square root is always non-negative.
+\newline
+Since we have defined $\delta$, $|x-x_0|<\delta \implies x < \delta \implies f(x) < \sqrt \delta = \epsilon$
+\newline
+Thus we have proved that the function is continuous at $x=0$.
+
+\subsection{If x $> $0}
+Let $\epsilon > 0, x_0 \in \R^+$. We pick $\delta = \min \{1, \frac{|\sqrt{1+|x_0|} + \sqrt x_0|}{\epsilon}\}$
+\newline
+Let $|x-x_0|<\delta$, Consider $|f(x)-f(x_0)| = |\sqrt x - \sqrt x_0| = |\sqrt x - \sqrt x_0| \frac{|\sqrt x + \sqrt x_0|}{|\sqrt x + \sqrt x_0|} = |\frac{x-x_0}{|\sqrt x + \sqrt x_0|}| = |\frac{x-x_0}{|\sqrt |x| + \sqrt x_0|}|$
+\newline
+Now we examine our definition of $\delta$. Since it cannot be greater than 1, we have $|x-x_0|<1$. By the triangle inequality we can state that $|x|< 1+|x_0|$.
+\newline
+We can now subsitute $|x|, \delta$:
+$$|f(x)-f(x_0)| = |\frac{x-x_0}{|\sqrt {|x|} + \sqrt x_0|}| <  |\frac{\delta}{|\sqrt{1+|x_0|} + \sqrt{x_0|}}|= \epsilon$$
+Thus we have proven that it is continuous.
+\newline
+Q.E.D.
+\newpage
+
+
+\section{Ross 17.10}
+\subsection{a}
+Let $x_0 = 0, \epsilon = 0.5$. Let $\delta > 0$, choose $x = \delta/2$. This fulfills the requirement that $|x-x_0|<\delta$. Now since $x>0$, $f(x) = 1$. However we know that $f(x)=f(0)=0$, $|f(x)-f(x_0)|=1  > \epsilon$
+\newline
+Thus we have shown that when $\epsilon = 0.5$, we cannot find a small enough delta to fulfill the property of continuity, there will always be a "big jump" to the right. Therefore the function is not continuous.
+
+\subsection{b}
+We first observe the sine function, for any $x$, between $[x, x+2\pi]$, the function will yield a $1$ and a $-1$ since it is cyclical.
+\newline
+Let $x_0 = 0, \epsilon = 0.01$. Let $\delta > 0$, choose $x = \min\{\delta/2, 1\}$. This fulfills the requirement that $|x-x_0|<\delta$. If $|f(x)|>0.01$, the proof is complete since this violates the epsilon delta property.
+\newline
+Otherwise we attempt to make $x$ smaller to violate the property. Since $0<x<1$, making $x$ smaller will make $1/x$ bigger. Consider the interval $$\frac{1}{x}<\frac{1}{x'}<\frac{1}{x}+2\pi$$
+$$0<\frac{x}{1+2\pi x}<x'<x$$
+This interval must yield a $1$ since $1/x$ has changed by $2\pi$, so let this value be denoted by $x', f(x')=1$. Since $x'$ is less than $x$, it is still within $\delta$ of 0. Therefore we have found a value inside our delta such that $|f(x')-f(x)|=0.99>\epsilon$
+\newline
+This violates the epsilon delta property, and the function is not continuous. Q.E.D.
+
+\subsection{c}
+Let $x_0 = 0, \epsilon = 0.5$. Let $\delta > 0$, choose $x = \delta/2$. This fulfills the requirement that $|x-x_0|<\delta$. Now since $x>0$, $f(x) = 1$. However we know that $f(x)=f(0)=0$, $|f(x)-f(x_0)|=1  > \epsilon$
+\newline
+We can then repeat this process with $x' = -\delta/2$, with $f(x')=-1, |f(x')-f(x)|=1>\epsilon$
+\newline
+Thus we have shown that when $\epsilon = 0.5$, we cannot find a small enough delta to fulfill the property of continuity, there will always be a "big jump" to the left and to the right. Therefore the function is not continuous.
 
 \end{document}
