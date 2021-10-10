@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Math 104, HW6}
+\maketitle
+\newpage
+
+
+\section{Q1}
+Let $x_0 \in \R, \epsilon > 0$. We first define $\log_a a^k = k$. Choose $\delta = \log_a(\frac{\epsilon}{a^{x_0}}+1)$
+\newline
+Let $|x-x_0|<\delta$, consider $|f(x)-f(x_0)|=|a^x-a^{x_0}| \leq |a^{|x|}-a^{|x_0|}|$. Since we know that $|x-x_0|<\delta$, we have $|x|<\delta + |x_0|$
+\newline
+Now we subsitute our inequality in:
+$$|a^{|x|}-a^{|x_0|}| < |a^{\delta + |x_0|}-a^{|x_0|}| = |a^{x_0}(a^\delta - 1)| = |a^{x_0}( \frac{\epsilon}{a^{x_0}}+1-1)| = |a^{x_0}\frac{\epsilon}{a^{x_0}}|=\epsilon$$
+Therefore we have shown the epsilon delta property. $\blacksquare$
+\newpage
+
+
+\section{Ross 17.12}
+
+\subsection{a}
+Assume that there is a point $x_0 \in (a,b)$ where $f(x_0) \not= 0$. We now try to show that this contradicts the epsilon-delta property of continuity.
+\newline
+Now let $f(x_0) = k, \epsilon = |k|/2$. By continuity there exists $\delta > 0$ such that $|x-x_0|<\delta \implies |f(x)-f(x_0)|<\delta$. Now let this arbitrary delta be $\delta_0$. By the density of rationals we know that there exists $q \in \Q s.t. x_0-\delta < q < x_0+\delta$. By the definition of this function $f(q)=0$, and $|f(x_0)-f(q)|=k > \epsilon$. \lightning
+\newline
+We have found a contradiction of the continuity principle, so our assumption must be wrong and $f(x) = 0$ in the domain.
+
+\subsection{b}
+We can simply repeat the argument above but replace $0$ with $g(r)$. Since we never really used the value $0$ , we can safely do this.
+\newline
+Assume that there is a point $x_0 \in (a,b)$ where $f(x_0) \not= g(x_0)$. We now try to show that this contradicts the epsilon-delta property of continuity.
+\newline
+Now let $f(x_0) = k, \epsilon = |k-g(x_0)|/2$. By continuity there exists $\delta > 0$ such that $|x-x_0|<\delta \implies |f(x)-f(x_0)|<\delta$. Now let this arbitrary delta be $\delta_0$. By the density of rationals we know that there exists $q \in \Q s.t. x_0-\delta < q < x_0+\delta$. By the definition of this function $f(q)=g(q)$, and $|f(x_0)-f(q)|=|k-g(x_0)| > \epsilon$. \lightning
+\newline
+We have found a contradiction of the continuity principle, so our assumption must be wrong and $f(x) = 0$ in the domain.
+
+
+\end{document}
