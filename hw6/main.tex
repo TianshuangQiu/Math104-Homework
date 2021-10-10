@@ -44,18 +44,32 @@ Therefore we have shown the epsilon delta property. $\blacksquare$
 \subsection{a}
 Assume that there is a point $x_0 \in (a,b)$ where $f(x_0) \not= 0$. We now try to show that this contradicts the epsilon-delta property of continuity.
 \newline
-Now let $f(x_0) = k, \epsilon = |k|/2$. By continuity there exists $\delta > 0$ such that $|x-x_0|<\delta \implies |f(x)-f(x_0)|<\delta$. Now let this arbitrary delta be $\delta_0$. By the density of rationals we know that there exists $q \in \Q s.t. x_0-\delta < q < x_0+\delta$. By the definition of this function $f(q)=0$, and $|f(x_0)-f(q)|=k > \epsilon$. \lightning
+Now let $f(x_0) = k, \epsilon = |k|/2$. By continuity there exists $\delta > 0$ such that $|x-x_0|<\delta \implies |f(x)-f(x_0)|<\epsilon$. Now let this arbitrary delta be $\delta_0$. By the density of rationals we know that there exists $q \in \Q s.t. x_0-\delta < q < x_0+\delta$. By the definition of this function $f(q)=0$, and $|f(x_0)-f(q)|=k > \epsilon$. \lightning
 \newline
 We have found a contradiction of the continuity principle, so our assumption must be wrong and $f(x) = 0$ in the domain.
 
 \subsection{b}
-We can simply repeat the argument above but replace $0$ with $g(r)$. Since we never really used the value $0$ , we can safely do this.
+We can simply repeat the argument above but replace $0$ with $g(r)$. We need to argue a bit more since $g$ is now a function and not a constant.
 \newline
 Assume that there is a point $x_0 \in (a,b)$ where $f(x_0) \not= g(x_0)$. We now try to show that this contradicts the epsilon-delta property of continuity.
 \newline
-Now let $f(x_0) = k, \epsilon = |k-g(x_0)|/2$. By continuity there exists $\delta > 0$ such that $|x-x_0|<\delta \implies |f(x)-f(x_0)|<\delta$. Now let this arbitrary delta be $\delta_0$. By the density of rationals we know that there exists $q \in \Q s.t. x_0-\delta < q < x_0+\delta$. By the definition of this function $f(q)=g(q)$, and $|f(x_0)-f(q)|=|k-g(x_0)| > \epsilon$. \lightning
+Now let $f(x_0) = k, \epsilon = |k-g(x_0)|/2$. By continuity there exists $\delta > 0$ such that $|x-x_0|<\delta \implies |f(x)-f(x_0)|<\epsilon$. Now let this arbitrary delta be $\delta_0$. By the density of rationals we know that there exists $q \in \Q s.t. x_0-\delta < q < x_0+\delta$. By the definition of this function $f(q)=g(q)$, and $|f(x_0)-f(q)|=|k-g(x_0)| > \epsilon$. \lightning
 \newline
 We have found a contradiction of the continuity principle, so our assumption must be wrong and $f(x) = 0$ in the domain.
+\newpage
+
+
+\section{Ross 17.13}
+
+\subsection{a}
+Let $x_0 \in \Q, \epsilon_0 = 0.5$. We assume that the function is continuous at $x_0$, then there exists $\delta > 0$ such that $|x-x_0|<\delta \implies |f(x)-f(x_0)|<\epsilon$. Let this delta be $\delta_0$. By the density of irrationals we know that there exists $a \in \R \setminus \Q$ such that $x_0-\delta < a < x_0+\delta$. Then by the definition of this function we have $f(a)=0$. $|a-x_0|<\delta$ but $|f(a)-f(x_0)|>\epsilon$ \lightning
+\newline
+Therefore this function is not continuous at any rational $x$.
+\newline
+For any irrational $x_1$, we can repeat the above reasoning and use the density of rationals to find a rational that is within delta of $x_1$ but further than epsilon.
+
+\subsection{b}
+Let $x_0 = 0$, we choose $\delta = \epsilon/2$. If $|x-x_0|<\delta$ we can split the cases into two: if $x$ is rational or if $x$ is irrational. If $x \in \Q$ we have $f(x) = x$, then we can use our definiiton of delta $|f(x)-f(x_0)|$
 
 
 \end{document}
