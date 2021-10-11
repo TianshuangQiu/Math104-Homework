@@ -69,7 +69,63 @@ Therefore this function is not continuous at any rational $x$.
 For any irrational $x_1$, we can repeat the above reasoning and use the density of rationals to find a rational that is within delta of $x_1$ but further than epsilon.
 
 \subsection{b}
-Let $x_0 = 0$, we choose $\delta = \epsilon/2$. If $|x-x_0|<\delta$ we can split the cases into two: if $x$ is rational or if $x$ is irrational. If $x \in \Q$ we have $f(x) = x$, then we can use our definiiton of delta $|f(x)-f(x_0)|$
+\par
+Let $x_0 = 0$, we choose $\delta = \epsilon/2$. If $|x-x_0|<\delta$ we can split the cases into two: if $x$ is rational or if $x$ is irrational. If $x \in \Q$ we have $f(x) = x$, then we can use our definiiton of delta $|f(x)-f(x_0)| = |x - x_0| < \delta = \epsilon/2 < \epsilon$. Otherwise if $x$ is irrational we have $f(x) = 0$ and $|0-0|=0 < \epsilon$. Therefore $h(x)$ is continuous at $0$.
+\par
+Let $x_0 \not = 0$. If $x_0$ is rational then $f(x_0) = x_0$, then we pick $\epsilon = x_0/2$, and we can see that for any $\delta > 0$, by the density of irrationals there exists an irrational $x' s.t. x_0 - \delta < x' <x_0+\delta$, and $f(x')=0$, so $|f(x')-f(x_0)|=x_0 > \epsilon$, therefore the function is not continuous at any non-zero rational.
+\newline
+Now let $x_0$ be an irrational, we can pick $\epsilon = |x_0|/2$, and for any $\delta > 0$, by the density of rationals there exists an rational $x' s.t. x_0 - \delta < x' <x_0+\delta$ and $|x'|>|x_0|$. $f(x') = x'$ Then by our definiiton of epsilon we have $|f(x')-f(x_0)| = |x'| > \epsilon$
+\newline
+Thus the function is not continuous when $x \not = 0$
+\newpage
 
 
+\section{Q4}
+Let $\epsilon = 1$, assume that there exists some $\delta > 0$ such that for any $x_0, x_1$, $|x_0-x_1|<\delta \implies |f(x_0)-f(x_1)|<\epsilon$
+\newline
+Let $\delta > 0, \delta_0 = \min\{\delta, 1\}$. Let $x_0 = \max \{100, 1/\delta_0\}, x_1 = x_0 + \delta_0/2$.
+We expand
+$$x_0 = 1/\delta_0^2, x_1 = (1/\delta_0^2+\delta_0/2)^2 = (\frac{2+\delta_0^3}{2\delta_0^2})^2 = \frac{4 + \delta_0^6 + 4delta_0^3}{4 \delta_0^4} > \frac{4}{4\delta_0^4}$$
+Since $\delta_0 \leq 1$, we can say that the above fraction is greater than or equal to 1, which is epsilon.
+\newline
+Therefore we have $|x_0-x_1| = \delta_0/2 < \delta$, $|f(x_0)-f(x_1)| > \frac{4}{4\delta_0^4} \geq 1 = \epsilon$. Therefore we have shown that for $\epsilon = 1$, we cannot possibly find a delta to satisfy the epsilon-delta property. Therefore it is not uniformly continuous.
+\newpage
+
+
+\section{Q5}
+Since the sum of continuous functions are continuous, and we know that all powers of $x$ is continuous, $f(x)$ is continuous everywhere.
+\newline
+We will attempt to use the intermediate value theorem, since if we can find a positive value and a negative value, and since the function is continuous, there must be a point where $f(x) =0$ in between it.
+\newline
+First we know that $lim _{x \to \infty} x = \infty$. If $a_1, a_2$ are non-zero, $|a_1x|<|a_2x^2|$ when $|x|>|a_1/\sqrt{a_2}|$; likewise, $|a_2x^2| < |a_3x^3|$ when $|x|>|a_2^2/\sqrt[3]{a_3}|$
+\newline
+Now we can see that since the absolute value of $a_3x^3$ will be greater than the rest of the terms, its behavior as $|x|$ becomes large dictates the polynomial's behavior.
+\newline
+Therefore if $a_3>0, f(x)\to \infty$ as $x \to infty$, and $f(x)\to -\infty$ as $x \to -\infty$ otherwise $f(x)\to -\infty$ as $x \to \infty, f(x) \to \infty$ as $x \to -\infty$. In all cases one is positive and the other is negative, so there must be a 0 in between.
+\newline
+$\blacksquare$
+\newpage
+
+
+\section{Q6}
+Since $f$ is continuous and $x_n \in \R$, we know that $x_n$ converges. By the definition of continuity we know that $f(x_n)$ also converges, and since the codomain: $\R$ is complete, we know that $f(x_n)$ is cauchy.
+\newline
+Q.E.D.
+\newpage
+
+
+\section{Q7}
+
+Define $g: $ [0, 1] $\to \R, g(x)=f(x)$. Now $g$ is continuous since $f$ is continuous. Since the domain of $g$ is closed and bounded, $g$ is uniformly continuous. Therefore for any $\epsilon > 0$, there exists $\delta > 0$ such that for any $x,y \in 0, 1$, $|x-y|<\delta \implies |g(x)-g(y)|<\epsilon$
+\newline
+We can see that this function has a cyclical nature to it, with each period having length $1$. For any $x \in \R$, let $a=1$, by the Archimedean Principle we know that there exists an integer $N$ such that $N a > x$. Let $S$ be the set of such integers. Since it is bounded below, we can pick the smallest one $n$.
+Since $n-1$ is not in the set, $n-1 \leq x < n$
+\newline
+Now we can simply subtract $n-1$ from x to get $x' \in $ [0, 1]. By the property of this function $f(x) = f(x')$.
+\newline
+For any $\epsilon > 0$ we can find $\delta > 0$ that satisfies the epsilon-delta property in $g$. Then since this function is cyclical. We know that the neighborhood near $x$ is exactly the neighborhood near $x'$, therefore our $\delta$ that works on $g$ will also work with $f$.
+\newline
+Thus we have found a delta for any epsilon that satisfies uniform continuity.
+\newline
+Q.E.D.
 \end{document}
