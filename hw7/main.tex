@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Math 104, HW7}
+\maketitle
+\newpage
+
+
+\section{Q1}
+We first show that the limits exist $\implies$ uniformly continuous. We extend the definition of $f: [a,b]$ where $f(a) = \lim_{x\to a}, f(b) = \lim_{x\to b}$. Since the limit exists, we know that $f$ can get arbitrily close it. More precisely, we know that there exists $\delta$ such that $|x-a| < \delta \implies |f(x)-\lim_{x\to a}|<\epsilon$ for any $\epsilon > 0$. This also demonstrates continuity at $a$. We can repeat this logic to show that it is continuous at $b$. Then, since $f$ is continuous on the closed inverval and continuous, it is uniformly compact.
+\newline
+Now we show that uniformly continuous $\implies$ limits exist. Let $a_n \in (a,b)$ be an arbitrary sequence that converges to $a$. Then since it is convergent, we know that it is cauchy. Now since $f$ is uniformly continuous, we know that $f(a_n)$ is also cauchy, and it is therefore convergent. Therefore the limit exists as $x \to a$. We can repeat this argument for $b$ to show that $\lim_{x\to b} f(x)$ exists.
+\newline
+Thus it is proven.
+\newpage
+
+
+\section{Q2}
+Let $f: S \to S^{\*}$ be continuous, let $E \subset S^{\*}$ be a closed set, then $E' = S^{\*} \setminus E$ is open and $f^{-1}(E')$ is also open by continuity.
+\newline
+Consider $f^{-1}(E')$
+\newpage
+
+
+\section{Q3}
+Let $C = \{(1/n, \infty)...\}$ for all $n \in \N$.
+We claim that $C$ is a cover for $(0, \infty)$. To see that it is true, let $x \in (0, \infty)$, if $x>1$, it is in every subset. Otherwise, by the Archimedean Principle there exists $m \in \N$ such that $1/m < x$. Therefore $x \in (1/m, \infty) \in C$.
+\newline
+Now we take $C \cup (-\infty, 0]$. Let $x \in \R$, if $ x\leq 0$, then it is in the second set, otherwise it is in the first.
+\newline
+Let $C'$ be a finite subset of $C$, then we must have $C' = \{(1/a, \infty), ..., (1/b, \infty)\}$ with natural numbers $a \leq b$. Now consider $r = 1/(2a)$. Since $0<r<1/a$, $r \not \in C'$, and $r \not \in (-\infty, 0]$
+\newline
+We can find a such $r$ for any finite subset of $C$, therefore there is no finite subcover of $\R$. Thus $\R$ is not compact.
+\newpage
+
+
+\section{Q4}
+Consider $X = S \setminus F$. Since $F$ is closed, its complement $X$ is open. Now let $C$ be any arbitrary open cover of $F$. We take the union of the above two sets: $C' = X \cup C$. Since $C$ covers F and $A$ covers the rest of the metric space, and since $E \subset S$, $C'$ is an open cover of $E$.
+\newline
+Now we apply the definition of compactness, so there exists a finite subcover in $C'$. Let this subcover be $Y$. If $X \not\in Y$, then our proof is complete since $F \subseteq E$. Any cover that covers $E$ must also cover $F$.
+\newline
+Otherwise, we remove A: $Y \setminus X$. Since we have removed what we have added, $(Y \setminus X) \subseteq C$. This set is a subcover for $F$, since $X \cup F = \emptyset$, we are not removing any point that is inside $F$, thus we have found a subcover that covers $F$.
+\newpage
+
+
+\section{Q5}
+
+\end{document}
