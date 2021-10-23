@@ -76,5 +76,24 @@ Otherwise, we remove A: $Y \setminus X$. Since we have removed what we have adde
 
 
 \section{Q5}
+Any set with the interval property can be written as $(a,b), [a,b], (a,b], [a,b)$, where $a$ is the infimum of the set and $b$ the supremum. Square brackets mean that the infimum/supremum is in the set and round brackets mean that they are not.
 
+\subsection{a}
+If $I$ is closed, then $R \setminus I$ is open. Let $I$ be $[x,y]$. Then its complement is $(-\infty, x) \cup (y, \infty)$. For any point $i_0$ in this complement, we pick $r = \min\{|i_0-x|/2, |i_0-y|/2\}$, and thus $\{|i-i_0|<r\} \subset (\R \setminus I)$. Having square brackets on both ends ensures that $I$'s complement is open, therefore $I$ is closed.
+\newline
+Otherwise consider $I$ with a round bracket. Then its complement will contain that point. Let that point be $i_1$. At $i_1$, for any $r>0$, $\{|i_1-i|<r\} \cap I \not = \emptyset$. There will always be some part of that set that is in our original $I$. Therefore an interval with any round brackets is not closed.
+
+\subsection{b}
+If $I$ is open, then let it be $(x,y)$. For any point $i_0$ in this complement, we pick $r = \min\{|i_0-x|/2, |i_0-y|/2\}$, and thus $\{|i-i_0|<r\} \subseteq I$. Having round brackets on both ends ensures that $I$ is open.
+\newline
+Otherwise consider $I$ with a square bracket. Then it contains this point. Let this point be $i_1$ At $i_1$, for any $r>0$, $\exists j \in \{|i_1-i|<r\} \not \in I$
+\newline
+No matter how small we make the radius, this set will contain points that are not in $I$. Therefore having any square brackets make the interval not open.
+\newpage
+
+
+\section{Q6}
+We first assume that the set $G = E \cup F$ is disconnected. Then it follows that there exists two open sets $A,B$ such that $G = (G \cap A) \cup (G \cap B)$, $ (G \cap A) \cap (G \cap B) = \emptyset$, and $A \cap G \not = \emptyset$, $B \cap G \not = \emptyset$
+\newline
+If $A \cap E = A$, then  
 \end{document}
