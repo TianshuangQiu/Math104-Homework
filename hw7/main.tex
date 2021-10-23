@@ -38,9 +38,19 @@ Thus it is proven.
 
 
 \section{Q2}
-Let $f: S \to S^{\*}$ be continuous, let $E \subset S^{\*}$ be a closed set, then $E' = S^{\*} \setminus E$ is open and $f^{-1}(E')$ is also open by continuity.
+\paragraph{Forward statement}
 \newline
-Consider $f^{-1}(E')$
+Let $f: S \to S^{*}$ be continuous, let $E \subset S^{*}$ be a closed set, then $E' = S^{*} \setminus E$ is open and $f^{-1}(E')$ is also open by continuity.
+\newline
+Consider $f^{-1}(E')$, since $f$ is defined on all $S$, each $\exists f(s) \forall s \in S$. Therefore all $s \in S$ either has an image in $E$ or in $E'$, and $f^{-1}(E') = S \setminus f^{-1}(E)$. Since we know that both $S$ and $f^{-1}(E')$ are open, $f^{-1}(E)$ must be closed.
+
+\paragraph{Converse}
+\newline
+Now assume that for any closed $F \subset S^{*}$,  $f^{-1}(F)$ is also closed. We essentially construct the same proof for open sets but with one more step. For any point $s_0 \in S$, $\epsilon >0$,  construct open set $G = \{d^{*}(f(s_0), s^{*}) < \epsilon\}$. Now take its complement $G' = S^{*} \setminus G$. Since $S^{*}$ and $G$ are both open, $G'$ is closed.
+\newline
+By our assuption $H' = f^{-1}(G')$ is closed, then its complement $H = S \setminus H'$ is open. Since $f(s_0) \in G$, we have $s_0 \in H$. Then we can find a "ball" inside this set such that for some $\delta >0$, $\{d(s-s_0)<\delta\} \subseteq H$
+\newline
+Thus it follows that $d(s-s_0)<\delta$ implies $d^{*}(f(s_0), s^{*}) < \epsilon$ and we have shown that $f$ is continuous at $s_0$. Since $s_0$ is an arbitrary point in $S$, $f$ is continuous.
 \newpage
 
 
