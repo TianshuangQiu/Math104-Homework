@@ -29,7 +29,7 @@
 
 
 \section{Q1}
-We first show that the limits exist $\implies$ uniformly continuous. We extend the definition of $f: [a,b]$ where $f(a) = \lim_{x\to a}, f(b) = \lim_{x\to b}$. Since the limit exists, we know that $f$ can get arbitrily close it. More precisely, we know that there exists $\delta$ such that $|x-a| < \delta \implies |f(x)-\lim_{x\to a}|<\epsilon$ for any $\epsilon > 0$. This also demonstrates continuity at $a$. We can repeat this logic to show that it is continuous at $b$. Then, since $f$ is continuous on the closed inverval and continuous, it is uniformly compact.
+We first show that the limits exist $\implies$ uniformly continuous. We extend the definition of $f: [a,b]$ where $f(a) = \lim_{x\to a}, f(b) = \lim_{x\to b}$. Since the limit exists, we know that $f$ can get arbitrily close it. More precisely, we know that there exists $\delta$ such that $|x-a| < \delta \implies |f(x)-\lim_{x\to a}|<\epsilon$ for any $\epsilon > 0$. This also demonstrates continuity at $a$. We can repeat this logic to show that it is continuous at $b$. Then, since $f$ is continuous on the closed inverval and continuous, it is uniformly continuous.
 \newline
 Now we show that uniformly continuous $\implies$ limits exist. Let $a_n \in (a,b)$ be an arbitrary sequence that converges to $a$. Then since it is convergent, we know that it is cauchy. Now since $f$ is uniformly continuous, we know that $f(a_n)$ is also cauchy, and it is therefore convergent. Therefore the limit exists as $x \to a$. We can repeat this argument for $b$ to show that $\lim_{x\to b} f(x)$ exists.
 \newline
@@ -38,14 +38,12 @@ Thus it is proven.
 
 
 \section{Q2}
-\paragraph{Forward statement}
-\newline
+\subsection{Forward statement}
 Let $f: S \to S^{*}$ be continuous, let $E \subset S^{*}$ be a closed set, then $E' = S^{*} \setminus E$ is open and $f^{-1}(E')$ is also open by continuity.
 \newline
 Consider $f^{-1}(E')$, since $f$ is defined on all $S$, each $\exists f(s) \forall s \in S$. Therefore all $s \in S$ either has an image in $E$ or in $E'$, and $f^{-1}(E') = S \setminus f^{-1}(E)$. Since we know that both $S$ and $f^{-1}(E')$ are open, $f^{-1}(E)$ must be closed.
 
-\paragraph{Converse}
-\newline
+\subsection{Converse}
 Now assume that for any closed $F \subset S^{*}$,  $f^{-1}(F)$ is also closed. We essentially construct the same proof for open sets but with one more step. For any point $s_0 \in S$, $\epsilon >0$,  construct open set $G = \{d^{*}(f(s_0), s^{*}) < \epsilon\}$. Now take its complement $G' = S^{*} \setminus G$. Since $S^{*}$ and $G$ are both open, $G'$ is closed.
 \newline
 By our assuption $H' = f^{-1}(G')$ is closed, then its complement $H = S \setminus H'$ is open. Since $f(s_0) \in G$, we have $s_0 \in H$. Then we can find a "ball" inside this set such that for some $\delta >0$, $\{d(s-s_0)<\delta\} \subseteq H$
@@ -95,5 +93,19 @@ No matter how small we make the radius, this set will contain points that are no
 \section{Q6}
 We first assume that the set $G = E \cup F$ is disconnected. Then it follows that there exists two open sets $A,B$ such that $G = (G \cap A) \cup (G \cap B)$, $ (G \cap A) \cap (G \cap B) = \emptyset$, and $A \cap G \not = \emptyset$, $B \cap G \not = \emptyset$
 \newline
-If $A \cap E = A$, then  
+We now attempt to show that these two sets cannot exist.
+\newline
+Let $x \in E \cap F$, then without loss of generality assume that $x \in A$. Now take $y \in B$. Now one of the following must be true: $y \in E$ or $y \in F$. To make this simpler we name the subset that $y$ is in: $H$. Since $x \in E \cap F$, $x \in H$. Now we have $x \in A \cap H, y \in B \cap H$.
+\newline
+Since $E, F$ are connected, $H$ must also be connected. Since we know that $x \in A \cap H, y \in B \cap H$, we know that $A \cap H \not = \emptyset$, $B \cap H \not = \emptyset$. According to our assumption, $G \subseteq A \cup B$, then $H \subset A \cup B$. However, this is not possible because $H$ is connected and per the defintion of connectedness, it cannot be split by two open sets that satisfy the above constraints.
+\newline
+Therefore as shown above the sets $A, B$ cannot exist. We have reached a contradiction, and $G$ is therefore connected.
+\newpage
+
+
+\section{Q7}
+Since the equation we are given is a unit circle, we know from trigonometry that we can paramatrize the unit circle into $x=\cos(x), y=\sin(x), 0 \leq x \leq 2\pi$
+\newline
+Now since sine and cosine are both continuous, their sum is also continuous. Since $[0, 2\pi]$ is an interval, it is connected. We apply the theorem that continuous functions map connected sets to connected sets to see that the image (the unit circle) is connected as well.
+
 \end{document}
