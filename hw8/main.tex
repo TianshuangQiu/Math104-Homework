@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Math 104, HW8}
+\maketitle
+\newpage
+
+\section{Q1}
+For $x \not = 1$, $\frac{1}{x}$ is differentiable, and according to the inverse theorem, it is equal to $-\frac{1}{x^2}$
+\newline
+Since $\sin'(x) = \cos(x)$, and $\sin$ is well defined on all of $\R$ (the codomain of $\frac{1}{x}: \R \setminus 0 \to \R$), we can apply the chain rule to the second factor: $(\sin(\frac{1}{x}))' = \cos(\frac{1}{x})(-\frac{1}{x^2})$
+\newline
+Now since $x^2: \R \to \R$ is continuous in all its domain, we attempt to differentiate at an arbitrary point $x_0$:
+$$\lim_{x \to x_0}\frac{(x^2)-(x_0^2)}{x-x_0} = \lim_{x \to x_0}\frac{(x+x_0)(x-x_0)}{x-x_0} = \lim_{x \to x_0}(x+x_0) = 2x_0$$
+Therefore $(x^2)'=2x$
+\newline
+Finally we use the product rule and the derivative is $$2x\sin(\frac{1}{x}) + x^2\cos(\frac{1}{x})(-\frac{1}{x^2})= 2x\sin(\frac{1}{x})-\cos(\frac{1}{x})$$
+\newpage
+
+
+\section{Q2}
+We claim that $f'(0)$ exists and is equal to $0$.
+\newline
+Consider the definition of the derivative: $$\lim_{x \to 0}\frac{x^2\sin(\frac{1}{x})-0}{x-0}$$
+Since this funciton is defined on every point but 0, we have $f': \R \setminus 0 \to \R$
+Now we can simplify to:
+$$\lim_{x \to 0}x \sin(\frac{1}{x}) $$
+Now we apply the squeeze theorem with $-1 \leq \sin(s) \leq 1$, and
+$$-x \leq x \sin(\frac{1}{x}) \leq x$$
+Since $-x, x$ both converge to 0, our derivative also converges to 0.
+\newpage
+
+
+\section{Q3}
+We will use the fact that the derivative at $\R \setminus 0$ contains $\cos(\frac{1}{x})$, which fluctuates rapidly when $x$ is close to 0 to show a contradiction.
+\newline
+Assume that the derivative funciton $f'$ is continuous on $\R$. So let $\epsilon = 0.1, x_0=0$, then by our assumption there exists $\delta$ such that $|x-x_0|<\delta$ implies $|f'(x)-f'(0)|<\epsilon$
+\newline
+We have shown above that $f'(0)=0$, so we expand $|f'(x)-f'(0)|$:
+$$=|2x\sin(\frac{1}{x})-\cos(\frac{1}{x})-0| \leq |2x\sin(\frac{1}{x})|+|\cos(\frac{1}{x})| \leq 2x+|\cos(\frac{1}{x})|$$
+\newline
+By the Archimedean Principle we know that there exists $n$ such that $\frac{1}{n\pi} < \delta$. Set 
+
+\end{document}
