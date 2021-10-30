@@ -59,8 +59,58 @@ We will use the fact that the derivative at $\R \setminus 0$ contains $\cos(\fra
 Assume that the derivative funciton $f'$ is continuous on $\R$. So let $\epsilon = 0.1, x_0=0$, then by our assumption there exists $\delta$ such that $|x-x_0|<\delta$ implies $|f'(x)-f'(0)|<\epsilon$
 \newline
 We have shown above that $f'(0)=0$, so we expand $|f'(x)-f'(0)|$:
-$$=|2x\sin(\frac{1}{x})-\cos(\frac{1}{x})-0| \leq |2x\sin(\frac{1}{x})|+|\cos(\frac{1}{x})| \leq 2x+|\cos(\frac{1}{x})|$$
+$$=|2x\sin(\frac{1}{x})-\cos(\frac{1}{x})-0| \leq |2x\sin(\frac{1}{x})|+|\cos(\frac{1}{x})| \leq |\cos(\frac{1}{x})|$$
 \newline
-By the Archimedean Principle we know that there exists $n$ such that $\frac{1}{n\pi} < \delta$. Set 
+By the Archimedean Principle we know that there exists $n$ such that $\frac{1}{n}<\delta$. Set $x = \frac{1}{2\pi n} <\frac{1}{n}<\delta$. Consider $f'(x) = |\cos(2\pi n)| = 1 > \epsilon$.
+\newline
+Therefore when $\epsilon=0.1, x_0=0$, we have found an $x$ such that for any $\delta > 0$, though $|x-x_0|<\delta$, $|f'(x)-f'(x_0)|>\epsilon$
+\newline
+Thus the function is not continuous.
+$\blacksquare$
+\newpage
+
+
+\section{Q4}
+
+\subsection{a}
+Base case:
+\newline
+$(x^1)'$ By the definition of the derivative we know that $f'(a)=\lim_{x \to a} \frac{x-a}{x-a} = 1$ since the numerator and the denominator cancel.
+\newline
+Inductive step:
+\newline
+Assume that $(x^n)' = nx^{n-1}$ for some $n \in \N$ Consider $x^{n+1}$
+\newline
+We write it as $x^nx$, now we apply can the product rule. We have shown in the base case that $x'=1$, so we have
+$$(x^{n+1})' = nx^{n-1}x + 1x^{n} = (n+1)x^{n+1}$$
+Thus we have shown the inductive step. $\blacksquare$
+
+
+\subsection{b}
+We rewrite $(\frac{f}{g})' = (f\frac{1}{g})'$ Now we attempt to apply the chain rule to $(\frac{1}{g})'$
+\newline
+Since $g$ has codomain of $\R$ and is differentiable at $a$, we can use the chain rule.
+$$(\frac{1}{g})' = -\frac{1}{(g(a))^2}g'(a)$$
+Now we multiply $f(a)$ in with the product rule
+$$(\frac{f}{g})' = f'(a)\frac{1}{g(a)}-f(a)\frac{1}{(g(a))^2}g'(a)
+= \frac{f'(a)g(a)}{(g(a))^2}-\frac{f(a)g'(a)}{(g(a))^2}$$
+Thus it is proven.
+\newpage
+
+
+\section{Ross 29.5}
+My key observation to this problem is that when $x,y$ are close to each other, $(x-y)^2$ becomes very small. So in order to be smaller than or equal to this, $|f(x)-f(y)|$ must also be able to get arbitrarily small.
+\newline
+Let $\epsilon > 0$, for any $a \in \R$, we can simply pick our delta to be $\min\{1, \sqrt(\epsilon/2)\}$ Let $|x-a|<\delta$, then $(x-a)^2 < \delta ^2 = \epsilon/2$. Now by the statement of the problem $|f(x)-f(a)|\leq (x-a)^2 <\epsilon/2$. Therefore $f$ is be continuous everywhere.
+\newline
+Now consider the absolute value of the derivative of this function:
+$$|f'(a)| = \lim_{x \to a}\frac{|f(x)-f(a)|}{|x-a|}$$
+We can slightly modify the specification of the problem. Since $x^2 = (-x)^2$, we can rewrite the function assumption to be $|f(x)-f(y)|\leq |x-y|^2$
+\newline
+Now we have $|f'(a)| \leq \lim_{x \to a}x - a = 0$. Since $|f'(a)| \geq 0$, we have $|f'(a)| = 0$. Thus we have shown that the function has a derivative of $0$ everywhere, and it is therefore constant.
+$\blacksquare$
+
+
+\section{Ross 29.13}
 
 \end{document}
