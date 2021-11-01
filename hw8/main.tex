@@ -44,7 +44,7 @@ Finally we use the product rule and the derivative is $$2x\sin(\frac{1}{x}) + x^
 We claim that $f'(0)$ exists and is equal to $0$.
 \newline
 Consider the definition of the derivative: $$\lim_{x \to 0}\frac{x^2\sin(\frac{1}{x})-0}{x-0}$$
-Since this funciton is defined on every point but 0, we have $f': \R \setminus 0 \to \R$
+Since this function is defined on every point but 0, we have $f': \R \setminus 0 \to \R$
 Now we can simplify to:
 $$\lim_{x \to 0}x \sin(\frac{1}{x}) $$
 Now we apply the squeeze theorem with $-1 \leq \sin(s) \leq 1$, and
@@ -56,7 +56,7 @@ Since $-x, x$ both converge to 0, our derivative also converges to 0.
 \section{Q3}
 We will use the fact that the derivative at $\R \setminus 0$ contains $\cos(\frac{1}{x})$, which fluctuates rapidly when $x$ is close to 0 to show a contradiction.
 \newline
-Assume that the derivative funciton $f'$ is continuous on $\R$. So let $\epsilon = 0.1, x_0=0$, then by our assumption there exists $\delta$ such that $|x-x_0|<\delta$ implies $|f'(x)-f'(0)|<\epsilon$
+Assume that the derivative function $f'$ is continuous on $\R$. So let $\epsilon = 0.1, x_0=0$, then by our assumption there exists $\delta$ such that $|x-x_0|<\delta$ implies $|f'(x)-f'(0)|<\epsilon$
 \newline
 We have shown above that $f'(0)=0$, so we expand $|f'(x)-f'(0)|$:
 $$=|2x\sin(\frac{1}{x})-\cos(\frac{1}{x})-0| \leq |2x\sin(\frac{1}{x})|+|\cos(\frac{1}{x})| \leq |\cos(\frac{1}{x})|$$
@@ -109,8 +109,42 @@ We can slightly modify the specification of the problem. Since $x^2 = (-x)^2$, w
 \newline
 Now we have $|f'(a)| \leq \lim_{x \to a}x - a = 0$. Since $|f'(a)| \geq 0$, we have $|f'(a)| = 0$. Thus we have shown that the function has a derivative of $0$ everywhere, and it is therefore constant.
 $\blacksquare$
+\newpage
 
 
 \section{Ross 29.13}
+Consider $h(x)=g(x)-f(x)$. $h(0) = g(0)-f(0)=0, h'(x)=g'(x)-f'(x)$. By the specification of the problem we know that $h'(x)\geq 0 $ when $x \geq 0$
+\newline
+Now consider $h(y)$ with $y\geq 0$. Assume that there is a point $z \geq 0$ such that $g(z)<f(z)$, so $h(z)= g(z)-f(z) < 0$. Since $h(0)=0$, and $h$ is differentiable, by the Mean Value Theorem we know that there exists a point $p \in (0,z)$ where $h'(z)=\frac{h(z)-0}{z-0}<0$. However by our assumption we know that $h'(z) \geq 0 \forall z \geq 0$. We have reached a contradiction.
+\newline
+Therefore our assumption is incorrect, $g(x)\geq f(x)$ for all $x \geq 0$.
+\newpage
+
+
+\section{Ross 29.17}
+
+\subsection{$h$ is differentiable implies equal derivative and limit}
+Let $h$ be differentiable at $a$. Then by the definition of the derivative we have $\lim_{x \to a} \frac{h(x)-h(a)}{x-a}$ exists, which implies that $\lim_{x \to a} h(x)$ exists.
+Since the limit exists, for any $\epsilon > 0$, $\exists \delta > 0$ such that $|x-a|<\delta$ implies $|h(x)-h(a)|<\epsilon$. $h(a)=g(a)$ When $x$ is less than $a$, $|f(x)-g(a)|<\epsilon$. Since the difference is less than any positive number, $f(a)$ must equal $g(a)$.
+\newline
+Now consider the fact that  $\lim_{x \to a} \frac{h(x)-h(a)}{x-a}$ exists. Then we must have
+$$\lim_{x \to a^+} \frac{h(x)-h(a)}{x-a} = \lim_{x \to a^-} \frac{h(x)-h(a)}{x-a}$$
+By the definition of $h$ we can now break the above statement down into:
+$$\lim_{x \to a^+} \frac{f(x)-f(a)}{x-a} = \lim_{x \to a^-} \frac{g(x)-g(a)}{x-a}$$
+Since $f'(a), g'(a)$ exist, then the above equation must imply $\lim_{x \to a^+} f'(a) = \lim_{x \to a^-} g'(a)$, thus $f'(a)=g'(a)$
+
+
+\subsection{Converse}
+Let $f(a)=g(a), f'(a)=g'(a)$. Since $f(a)=g(a)$, and $f,g$ are differentiable and therefore continuous, the function $h$ is continuous at $a$.
+Now consider the derivative: $\lim_{x \to a} \frac{h(x)-h(a)}{x-a}$.
+\newline
+We break it down into two cases: $x$ converging from the negative and the positive
+$$\lim_{x \to a^+} \frac{h(x)-h(a)}{x-a} = \lim_{x \to a^+} \frac{f(x)-f(a)}{x-a} = f'(a)$$
+$$\lim_{x \to a^-} \frac{h(x)-h(a)}{x-a} = \lim_{x \to a^-} \frac{g(x)-g(a)}{x-a} = g'(a)$$
+Now since $f'(a)=g'(a)$, we know that $\lim_{x \to a^+} \frac{h(x)-h(a)}{x-a} = \lim_{x \to a^-} \frac{h(x)-h(a)}{x-a}$.
+Thus the limit exists, and therefore $h$ is differentiable at $a$
+\newline
+$\blacksquare$
+
 
 \end{document}
