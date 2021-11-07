@@ -61,5 +61,59 @@ $$\lim_{x\to 0}\frac{x-\sin x}{x\sin x} = \lim_{x\to 0}\frac{1-\cos x}{\sin x + 
 $$= \lim_{x\to 0}\frac{0}{1} = 0$$
 
 \subsection{d}
+We know that if $\lim_{x \to a} f(x)=b, \lim_{x \to b} g(x)=c$, then $\lim_{x \to a}g(f(x)) = g(\lim_{x \to a}f(x))$. Assume that the limit does exist for our expression, and since the natural log is continuous, we can apply this theorem.
+\newline
+$$\ln(\lim_{x \to 0} \cos x ^{1/x^2}) = \lim_{x \to 0} \ln(\cos x^{1/x^2}) = \lim_{x \to 0}\frac{\ln(\cos x)}{x^2}$$
+Now we can use l'hospital's Theorem
+$$=\lim_{x \to 0}\frac{-\sin x / \cos x}{2x} = \lim_{x \to 0}\frac{- \sec^2 x}{2} = -\frac{1}{2}$$
+Now to find $\lim_{x \to 0} \cos x ^{1/x^2}$, we simply apply the inverse of the natural log:
+$$e^\frac{-1}{2} = \frac{1}{\sqrt e}$$
+\newpage
+
+
+\section{Q3}
+\subsection{a}
+Since $x_n \to \infty$, $x_n$ get can arbitrarily large. More rigorously, for any $r \in \R$, there exists $n \in \N$ such that if $m > n$, $x_m > r$
+\newline
+Consider $y_n = \frac{1}{x_n}$. Let $\epsilon > 0$, let $\epsilon_0 = \max \{ \frac{1}{\epsilon}, 1\}$. Find $n \in \N$ such that $x_n > \epsilon 0$, which we know exists as we have shown above.
+Now since $\epsilon_0 > 0$, we know that $x_n, y_n$ are positive, so we have $|y_n| = |\frac{1}{x_n}| < |\frac{1}{\epsilon_0}| \leq \epsilon$
+\newline
+Thus we have shown that $|y_n|$ can get arbitrarily small, therefore $y_n \to 0$
+\newline
+$\blacksquare$
+
+\subsection{b}
+Since $\ln_{x \to a} f(x) = \infty$, then for any $r \in \R$, there exists a $\delta > 0$ such that $|x-a|<\delta \implies f(x)>r$
+\newline
+Let $g(x)=\frac{1}{f(x)}$. We know that $g$ is well defined since $f(x)\not = 0$ for $x \in (a,b)$. Let $\epsilon > 0$, take $\epsilon_0 = \max \{ \frac{1}{\epsilon}, 1\}$. Find $\delta > 0$ such that $f(a+\delta) > \epsilon_0$, which we know exists as we have shown above.
+\newline
+$|g(a+\delta)| < \frac{1}{\epsilon_0} \leq \epsilon$ We have shown thata $|g(x)|$ gets arbitrarily small when $x$ is close to $a$, therefore $\lim_{x\to a}\frac{1}{f(x)}=0$
+\newline
+$\blacksquare$
+\newpage
+
+
+\section{Q4}
+Let $P$ be a partition such that $P=\{t_0 = a < t_1 < ... < t_n = b \}$, furthermore let $P$ be evenly spaced such that $t_i-t_{i-1}$ is equal for all $1<i<n$. Let $M(s)$ denote the supremum of $f$ in a set $s$, and $m(s)$ the infimum.
+\newline
+We find the upper and lower Darboux Sum. Since $f(x)=x$, if $x_0 > x_1, f(x_0)>f(x_1)$, so the infimum is at the lower bound of the interval and the supremum the upper bound.
+$$U(f, P) = \sum_{i=1}^n M(s)(t_i-t_{i-1}) = \sum_{i=1}^n (t_i)(t_i-t_{i-1})$$
+$$L(f, P) = \sum_{i=1}^n m(s)(t_i-t_{i-1}) =  \sum_{i=1}^n (t_{i-1})(t_i-t_{i-1})$$
+Since $P$ is evenly spaced, we know that $t_i = a + (b-a)i/n$
+\newline
+Let $\epsilon > 0$, consider $U(f,P)-L(f,P)$, we can combine the sums to get
+$$U(f,P)-L(f,P) = \sum_{i=1}^n (t_i-t_{i-1})(t_i-t_{i-1}) = \frac{(b-a)^2}{n^2}$$
+Now for any $\epsilon > 0$ we simply need to choose $n > (b-a)^2/\epsilon$, which implies that $U(f,P)-L(f,P) < \epsilon$. Since it is less than any positive number and $U(f,P) \geq L(f,P)$, we have $U(f) = L(f)$ and the function is integrable.
+\newline
+In order to find U(f) we need to subsitute $U(f, P) = \sum_{i=1}^n (t_{i})(t_i-t_{i-1}) = \sum_{i=1}^n (a + (b-a)i/n)((b-a)/n) = (b-a)/n(\frac{((a+ (b-a)/n) + b)n}{2})$
+\newline
+The last step is using the sum of an arithmetic sequence, now we can tidy up to see that $U(f, P) = \frac{(b-a)(a+(b-a)/n) + b}{2}$. Since $U(f)$ is the infimum of the set $U(f, P)$ where $P$ is a partition, and we know that this sum is minimized as $n \to \infty$ since the term $(b-a)/n \to 0$ as proven in the last problem.
+Thus we have found
+$$U(f) = \lim_{n \to \infty}  \frac{(b-a)(a+(b-a)/n) + b}{2} = \frac{(b-a)(b+a)}{2}$$
+\newpage
+
+
+\section{Ross 32.6}
+Since $f$ is bounded, we know that $U_n, L_n$ are finite. Therefore we have $\lim U_n - \lim L_n = 0$. Since we know that $U(f,P)$ where $P$
 
 \end{document}
