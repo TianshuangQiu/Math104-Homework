@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Math 104, HW9}
+\maketitle
+\newpage
+
+\section{Q1}
+\subsection{a}
+To show that the inverse $g$ as defined in the problem is a function, we simply need to show that each unique input has a single output. This implies that our function $f$ must be injective on to $\R$, which is to say $f(a) = f(b) \iff a = b$.
+\newline
+We can assume that there exists $x_0, x_1 \in I$ such that $f(x_0) = f(x_1)$.
+Then by the Intermediate Value Theorem we know that there is a point $y \in (x_0, x_1)$ where $f'(y) = \frac{f(x_0)-f(x_1)}{x_0-x_1}=0$
+However the problem specifies that $f'(x) \not= 0$, therefore our assumption is incorrect and $f$ must be injective to $\R$. Thus its inverse $g$ exists.
+
+\subsection{b}
+We can use the fact that $f$ is differentiable and therefore continuous to state that it must map points that are close to each other to neighborhoods that are close to each other.
+\newline
+Assume that $g$ is not continuous, then there exists some $\epsilon > 0, y_0 \in f(I), f(x_0)=y_0$ such that for any $\delta > 0$, $|y-y_0|<\delta$ but $|x-x_0|>\epsilon$.
+We now unpack the statement: since we are taking $y=f(x)$ in this case, $|y-y_0|<\delta$ means that $|f(x)-f(x_0)|>\epsilon$.
+\newline
+However
+
+
+
+
+\end{document}
