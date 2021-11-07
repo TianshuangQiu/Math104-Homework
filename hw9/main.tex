@@ -32,18 +32,34 @@
 To show that the inverse $g$ as defined in the problem is a function, we simply need to show that each unique input has a single output. This implies that our function $f$ must be injective on to $\R$, which is to say $f(a) = f(b) \iff a = b$.
 \newline
 We can assume that there exists $x_0, x_1 \in I$ such that $f(x_0) = f(x_1)$.
-Then by the Intermediate Value Theorem we know that there is a point $y \in (x_0, x_1)$ where $f'(y) = \frac{f(x_0)-f(x_1)}{x_0-x_1}=0$
+Then by the Mean Value Theorem we know that there is a point $y \in (x_0, x_1)$ where $f'(y) = \frac{f(x_0)-f(x_1)}{x_0-x_1}=0$
 However the problem specifies that $f'(x) \not= 0$, therefore our assumption is incorrect and $f$ must be injective to $\R$. Thus its inverse $g$ exists.
 
 \subsection{b}
-We can use the fact that $f$ is differentiable and therefore continuous to state that it must map points that are close to each other to neighborhoods that are close to each other.
+We claim that $f$ is monotone. Since $f'(a) = \lim_{x \to a}\frac{f(x)-f(a)}{x-a}$ exists, we know that it satisfies the epsilon-delta property. Since $f$ is differentiable, its derivative is defined on all $I$. Therefore each point in $I$ also must satisfy the epsilon-delta property, and $f'$ is therefore continuous. Now since it is continuous, if $f'(b)>0$ and $f'(c)<0$ for some $b,c \in I$, then by Intermediate Value THeorem there must be $d \in (b,c)$ such that $f(d)=0$. However we know that to be false, therefore $f$ is monotone.
 \newline
-Assume that $g$ is not continuous, then there exists some $\epsilon > 0, y_0 \in f(I), f(x_0)=y_0$ such that for any $\delta > 0$, $|y-y_0|<\delta$ but $|x-x_0|>\epsilon$.
-We now unpack the statement: since we are taking $y=f(x)$ in this case, $|y-y_0|<\delta$ means that $|f(x)-f(x_0)|>\epsilon$.
-\newline
-However
+Let $\epsilon > 0, y_0 \in f(I), x_0 \in \R$ such that $f(x_0)=y_0$. Without loss of generality assume that $f$ is monotonically increasing. Therefore $f(x_0-\epsilon) < f(x_0) < f(x_0+\epsilon)$.
+Now we can simply take $\delta = \min\{f(x_0)-f(x_0-\epsilon), f(x_0+s\epsilon) + f(x_0)\}$. For any $|y_1-y_0|<\delta$, let $f(x_1)=y_1$, then $x_0-\epsilon < x_1 < x_0 + \epsilon$ by monoticity. Thus $g$ is continuous.
+\newpage
 
 
+\section{Ross 30.2}
+\subsection{a}
+$\sin(0)-0=0$, so we attempt to use l'hospital's rule. Assume that the limit exists, then it must be equal to
+$$\lim_{x \to 0}\frac{x^2}{\cos x} = \lim_{x \to 0}\frac{0}{1} = 0$$
+Therefore the limit is 0
 
+\subsection{b}
+For this problem we need to use l'hoospital's rule 3 times
+$$\lim_{x \to 0} \frac{\tan x-x}{x^3} = \lim_{x \to 0} \frac{\sec^2 x-1}{3x^2} = \lim_{x \to 0}\frac{2\tan(x)\sec^2(x)}{6x}$$
+$$= \lim_{x \to 0}\frac{2 \sec^2x (\sec^2(x) + 2 \tan^2(x))}{6} = \frac{2}{6} = \frac{1}{3}$$
+We used the chain rule for the second step, both the chain rule and the product rule for the third step.
+
+\subsection{c}
+We combine these fractions, then apply l'hospital's rule twice:
+$$\lim_{x\to 0}\frac{x-\sin x}{x\sin x} = \lim_{x\to 0}\frac{1-\cos x}{\sin x + x\cos x} = \lim_{x\to 0}\frac{\sin x}{\cos x + \sin x - x \sin x} $$
+$$= \lim_{x\to 0}\frac{0}{1} = 0$$
+
+\subsection{d}
 
 \end{document}
