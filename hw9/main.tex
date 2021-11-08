@@ -40,6 +40,8 @@ We claim that $f$ is monotone. Since $f'(a) = \lim_{x \to a}\frac{f(x)-f(a)}{x-a
 \newline
 Let $\epsilon > 0, y_0 \in f(I), x_0 \in \R$ such that $f(x_0)=y_0$. Without loss of generality assume that $f$ is monotonically increasing. Therefore $f(x_0-\epsilon) < f(x_0) < f(x_0+\epsilon)$.
 Now we can simply take $\delta = \min\{f(x_0)-f(x_0-\epsilon), f(x_0+s\epsilon) + f(x_0)\}$. For any $|y_1-y_0|<\delta$, let $f(x_1)=y_1$, then $x_0-\epsilon < x_1 < x_0 + \epsilon$ by monoticity. Thus $g$ is continuous.
+\newline
+If $f$ is monotonically decreasing we can simply repeat the above argument but with the signs flipped since if $a > b$, now we will have $f(b) > f(a)$
 \newpage
 
 
@@ -94,7 +96,7 @@ $\blacksquare$
 
 
 \section{Q4}
-Let $P$ be a partition such that $P=\{t_0 = a < t_1 < ... < t_n = b \}$, furthermore let $P$ be evenly spaced such that $t_i-t_{i-1}$ is equal for all $1<i<n$. Let $M(s)$ denote the supremum of $f$ in a set $s$, and $m(s)$ the infimum.
+Let $P$ be a partition such that $P=\{t_1 = a < t_2 < ... < t_n = b \}$, furthermore let $P$ be evenly spaced such that $t_i-t_{i-1}$ is equal for all $1<i<n$. Let $M(s)$ denote the supremum of $f$ in a set $s$, and $m(s)$ the infimum.
 \newline
 We find the upper and lower Darboux Sum. Since $f(x)=x$, if $x_0 > x_1, f(x_0)>f(x_1)$, so the infimum is at the lower bound of the interval and the supremum the upper bound.
 $$U(f, P) = \sum_{i=1}^n M(s)(t_i-t_{i-1}) = \sum_{i=1}^n (t_i)(t_i-t_{i-1})$$
@@ -102,7 +104,7 @@ $$L(f, P) = \sum_{i=1}^n m(s)(t_i-t_{i-1}) =  \sum_{i=1}^n (t_{i-1})(t_i-t_{i-1}
 Since $P$ is evenly spaced, we know that $t_i = a + (b-a)i/n$
 \newline
 Let $\epsilon > 0$, consider $U(f,P)-L(f,P)$, we can combine the sums to get
-$$U(f,P)-L(f,P) = \sum_{i=1}^n (t_i-t_{i-1})(t_i-t_{i-1}) = \frac{(b-a)^2}{n^2}$$
+$$U(f,P)-L(f,P) = \sum_{i=1}^n (t_i-t_{i-1})(t_i-t_{i-1}) = \frac{(b-a)^2}{n}$$
 Now for any $\epsilon > 0$ we simply need to choose $n > (b-a)^2/\epsilon$, which implies that $U(f,P)-L(f,P) < \epsilon$. Since it is less than any positive number and $U(f,P) \geq L(f,P)$, we have $U(f) = L(f)$ and the function is integrable.
 \newline
 In order to find U(f) we need to subsitute $U(f, P) = \sum_{i=1}^n (t_{i})(t_i-t_{i-1}) = \sum_{i=1}^n (a + (b-a)i/n)((b-a)/n) = (b-a)/n(\frac{((a+ (b-a)/n) + b)n}{2})$
@@ -114,6 +116,47 @@ $$U(f) = \lim_{n \to \infty}  \frac{(b-a)(a+(b-a)/n) + b}{2} = \frac{(b-a)(b+a)}
 
 
 \section{Ross 32.6}
-Since $f$ is bounded, we know that $U_n, L_n$ are finite. Therefore we have $\lim U_n - \lim L_n = 0$. Since we know that $U(f,P)$ where $P$
+Since $f$ is bounded, we know that $U_n, L_n$ are finite. Therefore we have $\lim U_n - \lim L_n = 0$. Since we know that $U(f,P)$ where $P$ is a partition has an infimum at $U(f)$ and similarly $L(f,P)$ has a supremum at $L(f)$.
+We have $\lim U_n = \lim L_n$, and that $U_n \geq L_n$ with the equivalence happening if and only if they are the infimum and the supremums and the function is integrable.
+We must have $\lim L_n = L(f)$ and $\lim U_n = U(f)$. Since $L(f)=U(f)$, the function is integrable. Thus we have
+$$\int_a^n f = L(f)=U(f) = \lim L_n = \lim U_n$$
+\newpage
 
+
+\subsection{Q6}
+We essentially have to show that since this is a finite subset, we can create finitely many "thin rectangles" around each of these points. These rectangles have negligible width and converges to 0.
+\newline
+For any $s_n \in S$, for ease of notation let $f(s_n) = y_n$. Now we consider the upper and lower Darboux sums of this function.
+\newline
+We define our partition $P$ as such: $P = \{a, s_n-\delta, s_n+\delta, b \}$ for each $s_n \in S$ with $\delta>0$(if $a \in S$ or $b \in S$,
+our first partitions become $\{a, a+\delta, ...\}$ or our last partitions become $\{..., b-\delta, b\}$).
+Since $S$ is finite, we can iterate through all the points in it with the above expression.
+\newline
+For the lower sum, since each partiton contains some points that are not in $S$, the infimum for every partiton is $0$, and we have $U(f,P) = 0$
+\newline
+For the upper sum, each partition that doesn't contain a point in $S$ has a supremum of $0$, a partiton $[s_n-\delta, s_n+\delta]$ has a supremum at $s_n$ with a value of $y_n$. So we have
+$$U(f,P) \leq 2\delta \sum_{i=1}^n y_i$$
+If $a$ or $b$ is in $S$, the above inequality still holds since our interval would only be $\delta$ instead of $2\delta$ and $\delta < 2\delta$
+\newline
+Let $z = \max \{y_1, y_1, ..., y_n\}$. For any $\epsilon >0$, choose $\delta < \frac{z}{2n}$. Now consider our inequality:
+$$U(f,P) \leq 2\delta \sum_{i=1}^n y_i \leq 2\delta z < \epsilon$$
+Thus we have shown that $U(f,P)$ can be less than any positive number, and we also know that $U(f,P) \geq L(f,P)=0$ so we have $U(f,P)=L(f,P)=0$. Thus the function is integrable.
+\newline
+Since this equivalency can only happen if $U(f,P)=U(f)$ and $L(f,P)=L(f)$, we have $\int_a ^b f = 0$
+\newpage
+
+
+\section{Q7}
+Let $P$ be an equi-distant partition of $[0, \pi/2]$. We compute the upper and lower Darboux sums:
+$$U(f, P) = \sum_{i=1}^n M(s)(t_i-t_{i-1})$$
+$$L(f, P) = \sum_{i=1}^n m(s)(t_i-t_{i-1})$$
+Since we know that $\sin x$ is monotonically increasing in our domain, so $M([a,b]) = \sin(b), m([a,b]) = \sin(a)$.
+\newline
+Since $P$ is equi-distant, we have $t_i = a + (b-a)i/n$, so when we take $U(f,P)-L(f,P)$, we can get a clean telescopic series:
+$$U(f,P)-L(f,P) = \sum_{i=1}^n \sin(a + (b-a)\frac{1}{n})(b-a)/n - \sin(a + (b-a)\frac{i-1}{n})(b-a)/n)$$
+$$= \frac{b-a}{n}(\sin b - \sin a)$$
+We know that $a=0, b = \pi/2$, so we have $U(f,P)-L(f,P) = \frac{\pi}{2n}1$
+\newline
+For any $\epsilon > 0$, pick $n > \max \{\frac{\pi}{2\epsilon}\, 1\}$. After partitioning $[0, \pi/2]$ into $n$ equal partitions, the difference between our upper and lower sum is $\frac{\pi}{2n} < \frac{\pi}{\epsilon \pi} = \epsilon$
+Thus we have shown that the difference between $U(f,P)$ and $L(f,P)$ can get arbitrarily small. Therefore the two converges to the same number, and $\sin x$ is integrable on our interval.
 \end{document}
