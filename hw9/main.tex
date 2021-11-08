@@ -36,10 +36,10 @@ Then by the Mean Value Theorem we know that there is a point $y \in (x_0, x_1)$ 
 However the problem specifies that $f'(x) \not= 0$, therefore our assumption is incorrect and $f$ must be injective to $\R$. Thus its inverse $g$ exists.
 
 \subsection{b}
-We claim that $f$ is monotone. Since $f'(a) = \lim_{x \to a}\frac{f(x)-f(a)}{x-a}$ exists, we know that it satisfies the epsilon-delta property. Since $f$ is differentiable, its derivative is defined on all $I$. Therefore each point in $I$ also must satisfy the epsilon-delta property, and $f'$ is therefore continuous. Now since it is continuous, if $f'(b)>0$ and $f'(c)<0$ for some $b,c \in I$, then by Intermediate Value THeorem there must be $d \in (b,c)$ such that $f(d)=0$. However we know that to be false, therefore $f$ is monotone.
+We claim that $f$ is monotone. Since $f'(a) = \lim_{x \to a}\frac{f(x)-f(a)}{x-a}$ exists, we know that it satisfies the epsilon-delta property at $a$. Since $f$ is differentiable, its derivative is defined on all $I$. Therefore each point in $I$ also must satisfy the epsilon-delta property, and $f'$ is therefore continuous. Now since it is continuous, if $f'(b)>0$ and $f'(c)<0$ for some $b,c \in I$, then by Intermediate Value Theorem there must be $d \in (b,c)$ such that $f(d)=0$. However we know that to be false, therefore $f$ is monotone.
 \newline
 Let $\epsilon > 0, y_0 \in f(I), x_0 \in \R$ such that $f(x_0)=y_0$. Without loss of generality assume that $f$ is monotonically increasing. Therefore $f(x_0-\epsilon) < f(x_0) < f(x_0+\epsilon)$.
-Now we can simply take $\delta = \min\{f(x_0)-f(x_0-\epsilon), f(x_0+s\epsilon) + f(x_0)\}$. For any $|y_1-y_0|<\delta$, let $f(x_1)=y_1$, then $x_0-\epsilon < x_1 < x_0 + \epsilon$ by monoticity. Thus $g$ is continuous.
+Now we can simply take $\delta = \min\{f(x_0)-f(x_0-\epsilon), f(x_0+\epsilon) - f(x_0)\}$. Then for any $|y_1-y_0|<\delta$, let $f(x_1)=y_1$, then $x_0-\epsilon < x_1 < x_0 + \epsilon$ by monoticity. Thus $g$ is continuous.
 \newline
 If $f$ is monotonically decreasing we can simply repeat the above argument but with the signs flipped since if $a > b$, now we will have $f(b) > f(a)$
 \newpage
@@ -138,8 +138,8 @@ For the upper sum, each partition that doesn't contain a point in $S$ has a supr
 $$U(f,P) \leq 2\delta \sum_{i=1}^n y_i$$
 If $a$ or $b$ is in $S$, the above inequality still holds since our interval would only be $\delta$ instead of $2\delta$ and $\delta < 2\delta$
 \newline
-Let $z = \max \{y_1, y_1, ..., y_n\}$. For any $\epsilon >0$, choose $\delta < \frac{z}{2n}$. Now consider our inequality:
-$$U(f,P) \leq 2\delta \sum_{i=1}^n y_i \leq 2\delta z < \epsilon$$
+Let $z = \max \{y_1, y_1, ..., y_n\}$. For any $\epsilon >0$, choose $\delta = \frac{\epsilon}{4nz}$. Now consider our inequality:
+$$U(f,P) \leq 2\delta \sum_{i=1}^n y_i \leq 2\delta nz = \frac{\epsilon}{2} < \epsilon$$
 Thus we have shown that $U(f,P)$ can be less than any positive number, and we also know that $U(f,P) \geq L(f,P)=0$ so we have $U(f,P)=L(f,P)=0$. Thus the function is integrable.
 \newline
 Since this equivalency can only happen if $U(f,P)=U(f)$ and $L(f,P)=L(f)$, we have $\int_a ^b f = 0$
@@ -153,10 +153,10 @@ $$L(f, P) = \sum_{i=1}^n m(s)(t_i-t_{i-1})$$
 Since we know that $\sin x$ is monotonically increasing in our domain, so $M([a,b]) = \sin(b), m([a,b]) = \sin(a)$.
 \newline
 Since $P$ is equi-distant, we have $t_i = a + (b-a)i/n$, so when we take $U(f,P)-L(f,P)$, we can get a clean telescopic series:
-$$U(f,P)-L(f,P) = \sum_{i=1}^n \sin(a + (b-a)\frac{1}{n})(b-a)/n - \sin(a + (b-a)\frac{i-1}{n})(b-a)/n)$$
+$$U(f,P)-L(f,P) = \sum_{i=1}^n \sin(a + (b-a)\frac{i}{n})(b-a)/n - \sin(a + (b-a)\frac{i-1}{n})(b-a)/n)$$
 $$= \frac{b-a}{n}(\sin b - \sin a)$$
 We know that $a=0, b = \pi/2$, so we have $U(f,P)-L(f,P) = \frac{\pi}{2n}1$
 \newline
-For any $\epsilon > 0$, pick $n > \max \{\frac{\pi}{2\epsilon}\, 1\}$. After partitioning $[0, \pi/2]$ into $n$ equal partitions, the difference between our upper and lower sum is $\frac{\pi}{2n} < \frac{\pi}{\epsilon \pi} = \epsilon$
+For any $\epsilon > 0$, pick $n > \max \{\frac{\pi}{2\epsilon}, 1\}$. After partitioning $[0, \pi/2]$ into $n$ equal partitions, the difference between our upper and lower sum is $\frac{\pi}{2n} < \frac{\pi}{\epsilon \pi} = \epsilon$
 Thus we have shown that the difference between $U(f,P)$ and $L(f,P)$ can get arbitrarily small. Therefore the two converges to the same number, and $\sin x$ is integrable on our interval.
 \end{document}
