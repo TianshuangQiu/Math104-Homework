@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1636875643 "main.tex" "main.pdf" "main" 1636875644
+["pdflatex"] 1636943532 "main.tex" "main.pdf" "main" 1636943534
   "C:/Users/Ethan/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1630650924 10391628 6e8eddc61a48ac3ce7a64b02d2ac5b1c ""
   "C:/Users/Ethan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1632095036 335515 8350a376910fb41ff1bea81614b38322 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -26,12 +26,16 @@
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/wasy/wasy8.tfm" 1578656721 904 a3deb54664adaaa632c6cdee911ffe34 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247593066 32080 340ef9bf63678554ee606688e7b5339d ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1247593067 36741 0ee9e374ec3e30da87cdfb0ea3575226 ""
+  "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247593066 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247593066 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247593067 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247593066 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247593067 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247593067 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247593067 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247593067 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247593067 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
+  "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247593073 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.def" 1626968576 123985 95be6f36f6c54070fdcb3cb50663eed2 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.sty" 1626968576 35620 c595f681ebc251caa49596c63048c363 ""
@@ -83,9 +87,9 @@
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/calc.sty" 1622546726 10214 00ce62e730d0cfe22b35e8f1c84949c7 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/wasysym/uwasy.fd" 1579693002 2296 c50bf1089c7a46a0d4e9a119e980be4e ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
-  "main.aux" 1636875644 686 a6952fd107c4a6960b952a0f8c11a2d8 "pdflatex"
-  "main.tex" 1636875636 3171 2640ceca6a16fc9f630bbc8a68e521c7 ""
+  "main.aux" 1636943533 1539 d7be370a24edcba89d5a1c95e60aac85 "pdflatex"
+  "main.tex" 1636943520 8024 9bb35c9086001432de8b4979d865ba97 ""
   (generated)
   "main.aux"
-  "main.pdf"
   "main.log"
+  "main.pdf"
