@@ -108,9 +108,26 @@ For $x>1$, $F'(x)= 4$. Therefore it is also differentiable at $(1, \infty)$. It 
 \newpage
 
 
-\subsection{Ross 34.5}
+\section{Ross 34.5}
 For each $x \in \R$, limit both $F,f$ to $[x-1,x+2]$. Since $f$ is continuous on this interval and $F$ is its integral, $F$ is differentiable at $x$ by the Fundamental Theorem of Calculus.
 \newline
 Since the upper bound of the integral computed in $F$ has an upper bound of $x+1$, by the same theorem we know that it is equal to $f(x+1)$ .
+\newpage
 
+
+\section{Ross 34.7}
+Let $J$ be the interval $(-\infty, \infty)$, $u:J \to \R $ is defined as $u=x^2$ and $u' = 2x$, and $f: \R \to \R$, $f = -\frac{2}{3}(1-a)^{3/2}$, by the power rule $f' = \sqrt{1-a}$. Now since $U(J) \subseteq \R$, we can apply u-subsitution here.
+\newline
+Let the integral equal $I$, we know that $2I = \int_0^1 2x \sqrt{1-x^2} dx= \int_0^1 u'(f'\circ u) = \int_{u(0)}^{u(1)}f' = f(1)-f(0) = \frac{2}{3}$
+\newline
+Now we have $2I = \frac{2}{3}$, so our original integral $I = \frac{1}{3}$
+\newpage
+
+\section{Ross 34.12}
+Assume that there exists some $f$ where it is not $0$ everywhere that satisfies this integrala. Since $g$ is an arbitrary continuous function and $f$ is continuous, let $g=f$. Now our integral becomes $\int_a^b f^2(x)dx = 0$
+Now since $f^2(x) \geq 0$, we know that $f^2(x) = 0$ everywhere in our interval.
+\newline
+To see that it is true, we let $f^2(x_0) > 0$, then by continuity there exists $\delta > 0$ such that $|f^2(x)-f^2(x_0)|< f^2(x_0)/2$, then in this interval the integral is at least $\delta f^2(x_0)/2$, thus the whole integral must be greater than or equal to it. Since the expression is positive, there is no way for the integral to be 0. Thus $x_0$ does not exist and $f^2(x)=0$ in our interval.
+\newline
+From our conclusion above it is simple to see that $f(x)=0$ everywhere for $f^2(x)=0$, therefore we have reached a contradiction, and $f(x)=0$ for all $x \in [a,b]$
 \end{document}
