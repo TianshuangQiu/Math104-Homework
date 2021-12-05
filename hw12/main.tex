@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Math 104, HW12}
+\maketitle
+\newpage
+
+\section{Q1}
+\subsection{a}
+First we know that $\sqrt{x^2} = |x|$. Since we know that $\frac{1}{n} \to 0$ and $\frac{1}{n^2} \to 0$, we can show uniform convergence by the following.
+\newline
+Let $\epsilon > 0$, pick $N$ such that for all $n > N$, $|\frac{1}{n}| < \epsilon^2$. Now since $|x| < 1$ and the domain of the square root being positive,
+$$f_n(x) = \sqrt{x^2 + \frac{1}{n}} \leq \sqrt{x^2 + \frac{2}{\sqrt{n}}|x| + \frac{1}{n}} \leq \sqrt{(x+\frac{1}{\sqrt{n}})^2}$$
+By our first statement the above expression is equal to $|(x+\frac{1}{\sqrt{n}})|$. By our definition of $N$,
+$$||(x+\frac{1}{\sqrt{n}})| - |x|| \leq |x+\frac{1}{\sqrt{n}}-x| = |\frac{1}{\sqrt{n}}| < \epsilon$$
+Thus we have $f_n \to |x|$ uniformly.
+
+\subsection{b}
+$f_n(x) = \sqrt{x^2 + \frac{1}{n}}$, and by the power rule we know that
+$$f_n'(x) = \frac{x}{\sqrt{x^2+\frac{1}{n}}}$$
+
+\subsection{c}
+Define $g: (-1,1) \to \R$, $g(x) = -1 $ for $x \in (-1,0)$, $g(x) = 1 $ for $x \in (0, 1)$, $g(0)=0.$
+
+\end{document}
