@@ -42,6 +42,27 @@ $f_n(x) = \sqrt{x^2 + \frac{1}{n}}$, and by the power rule we know that
 $$f_n'(x) = \frac{x}{\sqrt{x^2+\frac{1}{n}}}$$
 
 \subsection{c}
-Define $g: (-1,1) \to \R$, $g(x) = -1 $ for $x \in (-1,0)$, $g(x) = 1 $ for $x \in (0, 1)$, $g(0)=0.$
+Define $g: (-1,1) \to \R$, $g(x) = -1 $ for $x \in (-1,0)$, $g(x) = 1 $ for $x \in (0, 1)$, $g(0)=0$
+\newline
+For any $x < 0$, let $a_n = \frac{1}{f_n'(x)} = \frac{\sqrt{x^2+\frac{1}{n}}}{x}$. By part $a$ we know that $\sqrt{x^2+\frac{1}{n}} \to |x|$ uniformly.
+Let $\epsilon>0$ we pick $N$ such that $|\sqrt{x^2+\frac{1}{n}}-|x||<\epsilon x - x$, therefore
+$$|a_n-(-1)| = \frac{\sqrt{x^2+\frac{1}{n}}+x}{x} = \frac{|\sqrt{x^2+\frac{1}{n}}-|x||}{x} < \frac{\epsilon x}{x} = \epsilon$$
+If $x>0$, the same is true because the denominator is now positive and the absolute value sign should be flipped. Finally, if $x=0$, $f_n'(x)=g(x)=0$. Thus $f_n'(x) \to g(x)$ pointwise.
+\newline
+Since $f_n'(x)$ is a polynomial divided by a non-zero polynomial, it is continuous for all values of $n$ and for all values of $x \in (-1,1)$. However $g(x)$ is not continuous at $0$. By our theorem about uniform convergence of continuous functions, we know that $f_n'(x) \not \to g(x)$ uniformly.
+\newpage
+
+
+\section{Q2}
+For any $x \in (-1,1)$, shrink the domain of our power series to $[(x+1)/2, (1-x)/2]$. Now since both of these end points are within our radius of convergence, $\sum_{n=0}^{\infty}x^n \to \frac{1}{1-x}$ uniformly.
+\newline
+Then, we can take the derivative of both sides:
+$$(\sum_{n=0}^{\infty}x^n \to \frac{1}{1-x}) = \sum_{n=1}^{\infty}nx^n$$
+$$(\frac{1}{1-x})' = \frac{x}{(1-x)^2}$$
+Thus $\sum_{n=1}^{\infty}nx^n \to \frac{x}{(1-x)^2}$
+\newpage
+
+
+\section{Q3}
 
 \end{document}
