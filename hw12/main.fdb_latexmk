@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1638828015 "main.tex" "main.pdf" "main" 1638828017
+["pdflatex"] 1638837532 "main.tex" "main.pdf" "main" 1638837533
   "C:/Users/Ethan/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt" 1630650924 10391628 6e8eddc61a48ac3ce7a64b02d2ac5b1c ""
   "C:/Users/Ethan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map" 1632095036 335515 8350a376910fb41ff1bea81614b38322 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -36,6 +36,7 @@
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247593067 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247593067 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247593067 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
+  "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247593073 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247593073 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.def" 1626968576 123985 95be6f36f6c54070fdcb3cb50663eed2 ""
@@ -88,9 +89,9 @@
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/tools/calc.sty" 1622546726 10214 00ce62e730d0cfe22b35e8f1c84949c7 ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/wasysym/uwasy.fd" 1579693002 2296 c50bf1089c7a46a0d4e9a119e980be4e ""
   "C:/Users/Ethan/AppData/Local/Programs/MiKTeX 2.9/tex/latex/wasysym/wasysym.sty" 1579693002 11252 7fbfbe7bbcbe1f73acbe32ae2f10c666 ""
-  "main.aux" 1638828016 574 27645b13a1fa834f73e28331f2606096 "pdflatex"
-  "main.tex" 1638828008 2761 ff6070dbf683bb0fc051f54c120a7ca7 ""
+  "main.aux" 1638837533 754 6876f66514278b5c978d02d2f5c9c2ed "pdflatex"
+  "main.tex" 1638837527 3766 692e1193859d7f24027512dd1d435045 ""
   (generated)
+  "main.aux"
   "main.pdf"
   "main.log"
-  "main.aux"
