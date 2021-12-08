@@ -103,7 +103,35 @@ Thus we have proven the inductive case, and the proof is complete.
 
 \section{Q7}
 \subsection{a}
-$\lim_{x \to 0} x^k = 0$, and $\lim_{x \to 0} \frac{1}{x^2} = \infty$ so $\lim_{x \to 0} e^{1/x^2} = 0$. Furthermore, both functions are differentiable at $0$, thus we may apply l'hospital's rule to this problem. Let $y = \frac{1}{x}$, so
-$$\lim_{x \to 0} \frac{e^{-\frac{1}{x^2}}}{x^k} = \lim_{x \to 0} \frac{e^{\frac{1}{x^2}}\frac{-2}{x^3}}{kx^{k-1}} = \frac{-2e^{\frac{1}{x^2}}}{kx^{k}}$$
+$\lim_{x \to 0} x^k = 0$, and $\lim_{x \to 0} \frac{1}{x^2} = \infty$ so $\lim_{x \to 0} e^{1/x^2} = 0$. Furthermore, both functions are differentiable at $0$, thus we may apply l'hospital's rule to this problem. Let $y = \frac{1}{x}$, so if $k$ is even,
+$$\lim_{x \to 0} \frac{e^{-\frac{1}{x^2}}}{x^k} = \lim_{y \to \infty}e^{-y^2}y^k$$
+Otherwise if $k$ is odd, it is equal to $\lim_{y \to -\infty}e^{-y^2}y^k$
+\newline
+We consider the even case first: $\ln{\lim_{y \to \infty}e^{-y^2}y^k}$
+$$= \lim_{y \to \infty}e^{-y^2}y^k = \lim_{y \to \infty}
+\frac{y^k}{e^{y^2}} = \lim_{y \to \infty}\frac{ky^{k-1}}{2ye^{y^2}}$$
+We can repeat this process $k$ times so that the numerator contains only constant terms, the denominator will at least have a $e^{y^2}$ term, so the limit is 0.
+\newline
+For the odd case, the process is identical, after $k$ iterations of L'Hospital's rule our expression contains only constants in the numerator, and the limit is 0.
+
+\subsection{b}
+In Q6, we have shown that $f^{n}(x) = e^{-y^2}\sum_{k=1}^{3n}\frac{a_{n,k}}{x^k}$, so we can break it down into each component of the sum. Now for each component consider
+$e^{\frac{1}{x^2}}\frac{a_{n,k}}{x^k}\frac{1}{x}$
+where $k$ is an integer between $1$ and $3n$, then we can combine it into
+$$e^{\frac{1}{x^2}}\frac{a_{n,k}}{x^{k+1}}$$
+By part $a$ and the fact that $a_{n,k}$ is a constant, the above expression converges to $0$ as $x \to 0$. Therefore each term of the summation converges to $0$ in our final expression, and $\lim_{x \to 0}\frac{f^{n}(x)}{x}=0$
+
+\subsection{c}
+Base case: $f^0(0)=0$. This is proven by our definition of $f$: $f(0)=0$
+\newline
+Inductive case: assume that $f^n(0)=0$ for some $n \geq 0$, then consider $f^{n+1}(0)$. By the definition of the derivative:
+$$f^{n+1}(0) = \lim_{x \to 0}\frac{f^{n}(x)-f^{n}(0)}{x-0}$$
+By our inductive hypothesis $f^{n}(0) = 0$, so the limit becomes $\lim_{x \to 0}\frac{f^{n}(x)}{x}$, which is known to be $0$ from part $b$.
+
+\subsection{d}
+Since we know that the the derivative of $f$ at $0$ is $0$ for all orders $n$, then the Taylor series for $f$ centered at $0$ is simply $0$. It converges to $f$ only at $0$ since $f(0)=0$ and the difference is $0$.
+\newline
+For any other point $e^{\frac{1}{x^2}} \not = 0$, and we can pick $\epsilon = e^{\frac{1}{x^2}}/2$ to see that our Tyalor series does not converge to any $x \not = 0$
+
 
 \end{document}
