@@ -103,7 +103,7 @@ Thus we have proven the inductive case, and the proof is complete.
 
 \section{Q7}
 \subsection{a}
-$\lim_{x \to 0} x^k = 0$, and $\lim_{x \to 0} \frac{1}{x^2} = \infty$ so $\lim_{x \to 0} e^{1/x^2} = 0$. Furthermore, both functions are differentiable at $0$, thus we may apply l'hospital's rule to this problem.
-$$\lim_{x \to 0} \frac{e^{}}{}$$
+$\lim_{x \to 0} x^k = 0$, and $\lim_{x \to 0} \frac{1}{x^2} = \infty$ so $\lim_{x \to 0} e^{1/x^2} = 0$. Furthermore, both functions are differentiable at $0$, thus we may apply l'hospital's rule to this problem. Let $y = \frac{1}{x}$, so
+$$\lim_{x \to 0} \frac{e^{-\frac{1}{x^2}}}{x^k} = \lim_{x \to 0} \frac{e^{\frac{1}{x^2}}\frac{-2}{x^3}}{kx^{k-1}} = \frac{-2e^{\frac{1}{x^2}}}{kx^{k}}$$
 
 \end{document}
